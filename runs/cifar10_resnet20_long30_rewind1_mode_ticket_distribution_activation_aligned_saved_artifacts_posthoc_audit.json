@@ -1,0 +1,871 @@
+{
+  "date": "2026-05-06",
+  "artifact_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_aligned_saved_artifacts_r5_p0p3/20260506_230706/mask_artifacts.npz",
+  "metadata": {
+    "alignment_method": "activation",
+    "blocks_per_stage": 3,
+    "cnn_width": 32,
+    "data_seed": 0,
+    "dataset": "cifar10",
+    "depth": 3,
+    "hidden_dim": 128,
+    "input_shape": [
+      3,
+      32,
+      32
+    ],
+    "mask_encoding": "uint8_keep_mask_flattened_by_parameter_names",
+    "model": "resnet20",
+    "num_classes": 10,
+    "posterior_chain_init": "dense",
+    "posterior_chains": 1,
+    "posterior_sampler": "sgld",
+    "resnet_width": 16,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "state_encoding": "float32_flattened_by_parameter_names",
+    "test_subset": null,
+    "train_subset": null
+  },
+  "collections": [
+    {
+      "name": "activation_aligned_chain_start",
+      "mask_count": 5,
+      "parameter_count": 270896,
+      "keep_count_mean": 45529.2,
+      "keep_fraction_mean": 0.16806892682062488,
+      "state_count": 5
+    },
+    {
+      "name": "activation_aligned_posterior_mode",
+      "mask_count": 1,
+      "parameter_count": 270896,
+      "keep_count_mean": 45529.0,
+      "keep_fraction_mean": 0.16806818852991554,
+      "state_count": 1
+    },
+    {
+      "name": "activation_aligned_posterior_sample",
+      "mask_count": 50,
+      "parameter_count": 270896,
+      "keep_count_mean": 45529.2,
+      "keep_fraction_mean": 0.16806892682062488,
+      "state_count": 50
+    },
+    {
+      "name": "activation_aligned_ticket",
+      "mask_count": 5,
+      "parameter_count": 270896,
+      "keep_count_mean": 45529.2,
+      "keep_fraction_mean": 0.16806892682062488,
+      "state_count": 5
+    },
+    {
+      "name": "chain_start",
+      "mask_count": 5,
+      "parameter_count": 270896,
+      "keep_count_mean": 45529.2,
+      "keep_fraction_mean": 0.16806892682062488,
+      "state_count": 5
+    },
+    {
+      "name": "posterior_mode",
+      "mask_count": 1,
+      "parameter_count": 270896,
+      "keep_count_mean": 45530.0,
+      "keep_fraction_mean": 0.1680718799834623,
+      "state_count": 1
+    },
+    {
+      "name": "posterior_sample",
+      "mask_count": 50,
+      "parameter_count": 270896,
+      "keep_count_mean": 45529.2,
+      "keep_fraction_mean": 0.16806892682062488,
+      "state_count": 50
+    },
+    {
+      "name": "ticket",
+      "mask_count": 5,
+      "parameter_count": 270896,
+      "keep_count_mean": 45529.2,
+      "keep_fraction_mean": 0.16806892682062488,
+      "state_count": 5
+    }
+  ],
+  "comparisons": [
+    {
+      "label": "raw posterior samples vs tickets",
+      "left": "posterior_sample",
+      "right": "ticket",
+      "left_count": 50,
+      "right_count": 5,
+      "same_index_pair_count": 5,
+      "optimal_pair_count": 5,
+      "hungarian_pair_count": 5,
+      "natural_hamming": {
+        "mean": 0.24688515149725357,
+        "min": 0.20817583131533873,
+        "max": 0.25674059417636286
+      },
+      "optimal_hamming": {
+        "mean": 0.21133866871419288,
+        "min": 0.2079764928238143,
+        "max": 0.2162305829543441
+      },
+      "hamming_improvement": 0.03554648278306069,
+      "natural_jaccard_keep": {
+        "mean": 0.15442394542924465,
+        "min": 0.13391611874875473,
+        "max": 0.2350866722730109
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.2279937935294752,
+        "min": 0.217076332918989,
+        "max": 0.2355495251017639
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.2655230732060884,
+        "min": 0.2362011025939511,
+        "max": 0.38068044543038504
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.3712737758920096,
+        "min": 0.35671769641327505,
+        "max": 0.3812870634746321
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_seed_0_chain_0_sample_1",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "posterior_seed_0_chain_0_sample_2",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 3,
+          "right_index": 3,
+          "left_id": "posterior_seed_0_chain_0_sample_3",
+          "right_id": "ticket_seed_3"
+        },
+        {
+          "left_index": 4,
+          "right_index": 4,
+          "left_id": "posterior_seed_0_chain_0_sample_4",
+          "right_id": "ticket_seed_4"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 10,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_0",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 20,
+          "right_index": 2,
+          "left_id": "posterior_seed_2_chain_0_sample_0",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 30,
+          "right_index": 3,
+          "left_id": "posterior_seed_3_chain_0_sample_0",
+          "right_id": "ticket_seed_3"
+        },
+        {
+          "left_index": 40,
+          "right_index": 4,
+          "left_id": "posterior_seed_4_chain_0_sample_0",
+          "right_id": "ticket_seed_4"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.05376700717418872,
+          "min": 0.03996087180148573,
+          "max": 0.05755349471725024
+        },
+        "optimal_state_rms": {
+          "mean": 0.04046677701553668,
+          "min": 0.03993722671899681,
+          "max": 0.041225667826086075
+        }
+      },
+      "channel_permutation": null,
+      "channel_permutation_skipped": true
+    },
+    {
+      "label": "raw posterior modes vs tickets",
+      "left": "posterior_mode",
+      "right": "ticket",
+      "left_count": 1,
+      "right_count": 5,
+      "same_index_pair_count": 1,
+      "optimal_pair_count": 1,
+      "hungarian_pair_count": 1,
+      "natural_hamming": {
+        "mean": 0.2554891914240151,
+        "min": 0.2554891914240151,
+        "max": 0.2554891914240151
+      },
+      "optimal_hamming": {
+        "mean": 0.2079764928238143,
+        "min": 0.2079764928238143,
+        "max": 0.2079764928238143
+      },
+      "hamming_improvement": 0.0475126986002008,
+      "natural_jaccard_keep": {
+        "mean": 0.13631996006738628,
+        "min": 0.13631996006738628,
+        "max": 0.13631996006738628
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.2355495251017639,
+        "min": 0.2355495251017639,
+        "max": 0.2355495251017639
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.23993498649212588,
+        "min": 0.23993498649212588,
+        "max": 0.23993498649212588
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.3812870634746321,
+        "min": 0.3812870634746321,
+        "max": 0.3812870634746321
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_mode_0_sample_10",
+          "right_id": "ticket_seed_0"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 1,
+          "left_id": "posterior_mode_0_sample_10",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.056950935735315955,
+          "min": 0.056950935735315955,
+          "max": 0.056950935735315955
+        },
+        "optimal_state_rms": {
+          "mean": 0.03993722671899561,
+          "min": 0.03993722671899561,
+          "max": 0.03993722671899561
+        }
+      },
+      "channel_permutation": null,
+      "channel_permutation_skipped": true
+    },
+    {
+      "label": "raw chain starts vs tickets",
+      "left": "chain_start",
+      "right": "ticket",
+      "left_count": 5,
+      "right_count": 5,
+      "same_index_pair_count": 5,
+      "optimal_pair_count": 5,
+      "hungarian_pair_count": 5,
+      "natural_hamming": {
+        "mean": 0.20998169039040815,
+        "min": 0.20655897466186285,
+        "max": 0.21517482723997403
+      },
+      "optimal_hamming": {
+        "mean": 0.20998169039040815,
+        "min": 0.20655897466186285,
+        "max": 0.21517482723997403
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.23104601369118308,
+        "min": 0.21940702252457348,
+        "max": 0.2387767317842956
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.23104601369118308,
+        "min": 0.21940702252457348,
+        "max": 0.2387767317842956
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.37531074478216847,
+        "min": 0.35985855169232794,
+        "max": 0.3855040632549967
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.37531074478216847,
+        "min": 0.35985855169232794,
+        "max": 0.3855040632549967
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "chain_start_seed_2_chain_0",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 3,
+          "right_index": 3,
+          "left_id": "chain_start_seed_3_chain_0",
+          "right_id": "ticket_seed_3"
+        },
+        {
+          "left_index": 4,
+          "right_index": 4,
+          "left_id": "chain_start_seed_4_chain_0",
+          "right_id": "ticket_seed_4"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "chain_start_seed_2_chain_0",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 3,
+          "right_index": 3,
+          "left_id": "chain_start_seed_3_chain_0",
+          "right_id": "ticket_seed_3"
+        },
+        {
+          "left_index": 4,
+          "right_index": 4,
+          "left_id": "chain_start_seed_4_chain_0",
+          "right_id": "ticket_seed_4"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.039826578822464986,
+          "min": 0.03930251771027129,
+          "max": 0.04059233771069265
+        },
+        "optimal_state_rms": {
+          "mean": 0.039826578822464986,
+          "min": 0.03930251771027129,
+          "max": 0.04059233771069265
+        }
+      },
+      "channel_permutation": null,
+      "channel_permutation_skipped": true
+    },
+    {
+      "label": "activation-aligned posterior samples vs tickets",
+      "left": "activation_aligned_posterior_sample",
+      "right": "activation_aligned_ticket",
+      "left_count": 50,
+      "right_count": 5,
+      "same_index_pair_count": 5,
+      "optimal_pair_count": 5,
+      "hungarian_pair_count": 5,
+      "natural_hamming": {
+        "mean": 0.2465942649577698,
+        "min": 0.21690242749985233,
+        "max": 0.25527139566475693
+      },
+      "optimal_hamming": {
+        "mean": 0.24401689209142993,
+        "min": 0.21690242749985233,
+        "max": 0.25135107199810997
+      },
+      "hamming_improvement": 0.0025773728663398554,
+      "natural_jaccard_keep": {
+        "mean": 0.15444107147783104,
+        "min": 0.1367330378877723,
+        "max": 0.2155977999679607
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.15944387103920835,
+        "min": 0.1443184959911529,
+        "max": 0.2155977999679607
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.2663884557095478,
+        "min": 0.24057194315710867,
+        "max": 0.35471897032660504
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.2740571678315278,
+        "min": 0.25223483933317226,
+        "max": 0.35471897032660504
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_seed_0_chain_0_sample_1",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "posterior_seed_0_chain_0_sample_2",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 3,
+          "right_index": 3,
+          "left_id": "posterior_seed_0_chain_0_sample_3",
+          "right_id": "ticket_seed_3"
+        },
+        {
+          "left_index": 4,
+          "right_index": 4,
+          "left_id": "posterior_seed_0_chain_0_sample_4",
+          "right_id": "ticket_seed_4"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 12,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_2",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 25,
+          "right_index": 2,
+          "left_id": "posterior_seed_2_chain_0_sample_5",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 30,
+          "right_index": 3,
+          "left_id": "posterior_seed_3_chain_0_sample_0",
+          "right_id": "ticket_seed_3"
+        },
+        {
+          "left_index": 43,
+          "right_index": 4,
+          "left_id": "posterior_seed_4_chain_0_sample_3",
+          "right_id": "ticket_seed_4"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.05079311488164563,
+          "min": 0.043218600020588326,
+          "max": 0.052780592038529084
+        },
+        "optimal_state_rms": {
+          "mean": 0.050292234716919196,
+          "min": 0.043218600020588326,
+          "max": 0.05228627689126551
+        }
+      },
+      "channel_permutation": null,
+      "channel_permutation_skipped": true
+    },
+    {
+      "label": "activation-aligned posterior modes vs tickets",
+      "left": "activation_aligned_posterior_mode",
+      "right": "activation_aligned_ticket",
+      "left_count": 1,
+      "right_count": 5,
+      "same_index_pair_count": 1,
+      "optimal_pair_count": 1,
+      "hungarian_pair_count": 1,
+      "natural_hamming": {
+        "mean": 0.21690242749985233,
+        "min": 0.21690242749985233,
+        "max": 0.21690242749985233
+      },
+      "optimal_hamming": {
+        "mean": 0.21690242749985233,
+        "min": 0.21690242749985233,
+        "max": 0.21690242749985233
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.2155977999679607,
+        "min": 0.2155977999679607,
+        "max": 0.2155977999679607
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.2155977999679607,
+        "min": 0.2155977999679607,
+        "max": 0.2155977999679607
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.35471897032660504,
+        "min": 0.35471897032660504,
+        "max": 0.35471897032660504
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.35471897032660504,
+        "min": 0.35471897032660504,
+        "max": 0.35471897032660504
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "activation_aligned_posterior_mode_0_sample_0",
+          "right_id": "ticket_seed_0"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "activation_aligned_posterior_mode_0_sample_0",
+          "right_id": "ticket_seed_0"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.04321860002058679,
+          "min": 0.04321860002058679,
+          "max": 0.04321860002058679
+        },
+        "optimal_state_rms": {
+          "mean": 0.04321860002058679,
+          "min": 0.04321860002058679,
+          "max": 0.04321860002058679
+        }
+      },
+      "channel_permutation": null,
+      "channel_permutation_skipped": true
+    },
+    {
+      "label": "activation-aligned chain starts vs tickets",
+      "left": "activation_aligned_chain_start",
+      "right": "activation_aligned_ticket",
+      "left_count": 5,
+      "right_count": 5,
+      "same_index_pair_count": 5,
+      "optimal_pair_count": 5,
+      "hungarian_pair_count": 5,
+      "natural_hamming": {
+        "mean": 0.2430822160533932,
+        "min": 0.21596479829897822,
+        "max": 0.25113696769239857
+      },
+      "optimal_hamming": {
+        "mean": 0.2430822160533932,
+        "min": 0.21596479829897822,
+        "max": 0.25113696769239857
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.16132167544840212,
+        "min": 0.14473568420390973,
+        "max": 0.21766224040865995
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.16132167544840212,
+        "min": 0.14473568420390973,
+        "max": 0.21766224040865995
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.2768377789800557,
+        "min": 0.252871795998155,
+        "max": 0.35750840123877087
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.2768377789800557,
+        "min": 0.252871795998155,
+        "max": 0.35750840123877087
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "chain_start_seed_2_chain_0",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 3,
+          "right_index": 3,
+          "left_id": "chain_start_seed_3_chain_0",
+          "right_id": "ticket_seed_3"
+        },
+        {
+          "left_index": 4,
+          "right_index": 4,
+          "left_id": "chain_start_seed_4_chain_0",
+          "right_id": "ticket_seed_4"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "chain_start_seed_2_chain_0",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 3,
+          "right_index": 3,
+          "left_id": "chain_start_seed_3_chain_0",
+          "right_id": "ticket_seed_3"
+        },
+        {
+          "left_index": 4,
+          "right_index": 4,
+          "left_id": "chain_start_seed_4_chain_0",
+          "right_id": "ticket_seed_4"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.04966622057233814,
+          "min": 0.04260952027261122,
+          "max": 0.05217018025316426
+        },
+        "optimal_state_rms": {
+          "mean": 0.04966622057233814,
+          "min": 0.04260952027261122,
+          "max": 0.05217018025316426
+        }
+      },
+      "channel_permutation": null,
+      "channel_permutation_skipped": true
+    },
+    {
+      "label": "ticket raw-vs-aligned delta",
+      "left": "ticket",
+      "right": "activation_aligned_ticket",
+      "left_count": 5,
+      "right_count": 5,
+      "same_index_pair_count": 5,
+      "optimal_pair_count": 5,
+      "hungarian_pair_count": 5,
+      "natural_hamming": {
+        "mean": 0.2254990845195204,
+        "min": 0.074744551414565,
+        "max": 0.26411611836276655
+      },
+      "optimal_hamming": {
+        "mean": 0.22541934912291062,
+        "min": 0.074744551414565,
+        "max": 0.2636657610300632
+      },
+      "hamming_improvement": 7.973539660977025e-05,
+      "natural_jaccard_keep": {
+        "mean": 0.2246122846974637,
+        "min": 0.11998327244997109,
+        "max": 0.636174150539953
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.22476110622708773,
+        "min": 0.12082420422933951,
+        "max": 0.636174150539953
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.3291474979270579,
+        "min": 0.2142590436864416,
+        "max": 0.7776362318522261
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.32938470937470665,
+        "min": 0.21559884908519844,
+        "max": 0.7776362318522261
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "ticket_seed_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "ticket_seed_1",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "ticket_seed_2",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 3,
+          "right_index": 3,
+          "left_id": "ticket_seed_3",
+          "right_id": "ticket_seed_3"
+        },
+        {
+          "left_index": 4,
+          "right_index": 4,
+          "left_id": "ticket_seed_4",
+          "right_id": "ticket_seed_4"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "ticket_seed_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "ticket_seed_1",
+          "right_id": "ticket_seed_1"
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "ticket_seed_2",
+          "right_id": "ticket_seed_2"
+        },
+        {
+          "left_index": 3,
+          "right_index": 4,
+          "left_id": "ticket_seed_3",
+          "right_id": "ticket_seed_4"
+        },
+        {
+          "left_index": 4,
+          "right_index": 3,
+          "left_id": "ticket_seed_4",
+          "right_id": "ticket_seed_3"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.048165879076867826,
+          "min": 0.026565253435298534,
+          "max": 0.054116728202915694
+        },
+        "optimal_state_rms": {
+          "mean": 0.04814369978419189,
+          "min": 0.026565253435298534,
+          "max": 0.053892703657092776
+        }
+      },
+      "channel_permutation": null,
+      "channel_permutation_skipped": true
+    }
+  ],
+  "skipped_comparisons": [
+    {
+      "label": "posterior sample raw-vs-aligned delta",
+      "left": "posterior_sample",
+      "right": "activation_aligned_posterior_sample",
+      "left_count": 50,
+      "right_count": 50,
+      "pair_count": 2500,
+      "reason": "pair count exceeds max_pair_count=1024"
+    }
+  ],
+  "overall": {
+    "schema_version": 1,
+    "dataset": "cifar10",
+    "model": "resnet20",
+    "parameter_count": 270896,
+    "parameter_name_count": 22,
+    "parameter_shapes_present": true,
+    "mask_collection_count": 8,
+    "state_collection_count": 8,
+    "resnet_channel_key_count": 19,
+    "required_collections_present": true,
+    "record_level_posthoc_matching_supported": true,
+    "local_channel_permutation_matching_supported": false,
+    "channel_permutation_comparison_count": 0,
+    "channel_permutation_skipped_count": 7,
+    "max_pair_count": 1024,
+    "max_channel_pair_count": 1,
+    "exhaustive_graph_channel_permutation_supported": false,
+    "limitation_statement": "record-level matching is supported when shapes and masks are saved; local channel matching is bounded by max_channel_pair_count, and exhaustive graph/channel permutation search still requires a global permutation objective"
+  }
+}
