@@ -1,0 +1,25 @@
+{
+  "date": "2026-05-06",
+  "python": {
+    "major": 3,
+    "minor": 12,
+    "micro": 3
+  },
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "torch": {
+    "cuda_available": true,
+    "cuda_version": "13.0"
+  },
+  "executables": {
+    "pdflatex_prefix": "pdfTeX 3.141592653-2.6-1.40.25",
+    "bibtex_prefix": "BibTeX 0.99d"
+  },
+  "packages": {
+    "matplotlib": "3.6.3",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.4.1.post1",
+    "scipy": "1.11.4",
+    "torch": "2.11.0",
+    "torchvision": "0.26.0"
+  }
+}

@@ -1,0 +1,629 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}
+\toprule
+Sampler & Scale & Post-chain & Post.-Chain & Rewind-Post. & Sample Acc. \\
+\midrule
+DiagLap & $10^{-3}$ & 0.8826 & -0.0021 & 0.0340 & 0.8799 \\
+KFACLap & $10^{-3}$ & 0.8016 & -0.0016 & 0.0334 & 0.8839 \\
+KFACLap & $10^{-2}$ & 0.4859 & -0.0154 & 0.0473 & 0.8695 \\
+LowRank32Lap & $10^{-3}$ & 0.9299 & -0.0007 & 0.0345 & 0.8843 \\
+LowRank32Lap & $10^{-2}$ & 0.7402 & -0.0098 & 0.0436 & 0.8789 \\
+LowRankLap & $10^{-3}$ & 0.9295 & -0.0008 & 0.0330 & 0.8848 \\
+LowRankLap & $10^{-2}$ & 0.7359 & -0.0105 & 0.0427 & 0.8784 \\
+SGHMC & $10^{-7}$ & 0.6796 & -0.0037 & 0.0358 & 0.8752 \\
+SGLD & $10^{-6}$ & 0.7362 & -0.0017 & 0.0359 & 0.8753 \\
+SWAG20 & $1.6\times 10^{1}$ & 0.9528 & -7.0e-05 & 0.0328 & 0.8636 \\
+SWAG20 & $6.4\times 10^{1}$ & 0.9086 & -0.0002 & 0.0329 & 0.8041 \\
+cSGLD & $10^{-6}$ & 0.7046 & -0.0033 & 0.0368 & 0.8782 \\
+\bottomrule
+\end{tabular}
+\caption{Paired five-seed CIFAR movement statistics. Post.-Chain is posterior-to-IMP minus chain-start-to-IMP; Rewind-Post. is rewind-magnitude-to-IMP minus posterior-to-IMP.}
+\label{tab:cifar-movement-stats}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}
+\toprule
+Sampler & Scale & Head post-chain & Head post.-chain & Head rewind-post. & Sample Acc. \\
+\midrule
+HeadLap & $10^{-3}$ & 0.7773 & -0.0085 & 0.0209 & 0.8856 \\
+HeadLap & $10^{-2}$ & 0.6912 & -0.0284 & 0.0407 & 0.8855 \\
+HeadLap & $10^{0}$ & 0.6769 & -0.0352 & 0.0475 & 0.8835 \\
+\bottomrule
+\end{tabular}
+\caption{Exact full-covariance Laplace probe for the final CIFAR
+classification head only. Head post.-chain is head posterior-to-IMP
+minus head chain-start-to-IMP; head rewind-post. is head
+rewind-magnitude-to-IMP minus head posterior-to-IMP.}
+\label{tab:cifar-head-laplace-stats}
+\end{table}
+
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+Sampler & Block & Params & B post-chain & B post.-chain & B rewind-post. & G post.-chain & Acc. \\
+\midrule
+BlockDiagLap & 11-block diag & 22064 & 0.5158 & -0.0114 & 0.0667 & 0.0036 & 0.8810 \\
+BlockDiagLap & 16-block diag & 68144 & 0.6146 & -0.0050 & 0.0520 & 0.0010 & 0.8802 \\
+BlockLap & layer1.0.conv1 & 2304 & 0.2236 & -0.0075 & 0.0464 & 0.0013 & 0.8961 \\
+BlockLap & layer3.0.shortcut.0 & 2048 & 0.3626 & -0.0010 & 0.0648 & 0.0008 & 0.8905 \\
+JointDiagLap & joint-group diag 20k & 86576 & 0.7009 & -0.0023 & 0.0465 & 0.0006 & 0.8828 \\
+JointDiagLap & joint-group diag 10k & 68144 & 0.5804 & -0.0050 & 0.0523 & 0.0015 & 0.8811 \\
+JointDiagLap & joint-group diag 40k & 270896 & 0.7389 & -0.0019 & 0.0362 & -0.0019 & 0.8824 \\
+JointLap & joint group & 5424 & 0.5088 & -0.0206 & 0.0343 & 0.0010 & 0.8922 \\
+\bottomrule
+\end{tabular}
+\caption{Full-covariance block Laplace probes for selected CIFAR
+ResNet-20 weight tensors, tensor groups, or a tensor-block
+diagonal subset with the rest of the network frozen.
+Block post.-chain is block posterior-to-IMP minus block
+chain-start-to-IMP; global post.-chain reports the induced global
+support change.}
+\label{tab:cifar-block-laplace-stats}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+Sampler & Step & PostCh. & Post.-Chain & Rwd.-Post. & Acc. & Accept & ParamDist. \\
+\midrule
+Hess16SubHMC & $3\times 10^{-4}$ & 0.9994 & -1.6e-05 & 0.0331 & 0.8881 & 0.8833 & 0.0095 \\
+Hess32SubHMC & $3\times 10^{-4}$ & 0.9993 & 3.6e-05 & 0.0326 & 0.8872 & 0.9500 & 0.0104 \\
+HessSubHMC & $3\times 10^{-4}$ & 0.9999 & 2.3e-06 & 0.0339 & 0.8865 & 0.8600 & 0.0022 \\
+RandSubHMC & $3\times 10^{-3}$ & 0.9766 & -2.2e-05 & 0.0339 & 0.8863 & 0.7400 & 0.3672 \\
+TrajSubHMC & $3\times 10^{-4}$ & 0.9950 & -0.0001 & -0.0499 & 0.8849 & 0.8000 & 0.0803 \\
+TrajSubHMC & $10^{-3}$ & 0.9915 & -0.0002 & -0.0498 & 0.8847 & 0.6900 & 0.1589 \\
+\bottomrule
+\end{tabular}
+\caption{Full-network low-dimensional subspace HMC probes around
+the dense CIFAR checkpoint. RandSubHMC and TrajSubHMC use
+random and dense-trajectory subspaces; Hessian rows use randomized
+top-Hessian subspaces.}
+\label{tab:cifar-subspace-hmc-stats}
+\end{table}
+
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Row & Post. & Chain & Delta & Wins & Post-chain & W-dist. \\
+\midrule
+JointLap & 0.3294 & 0.3501 & -0.0206 & 0.0000 & 0.5088 & 0.0206 \\
+DiagLap & 0.1447 & 0.1469 & -0.0021 & 0.0000 & 0.8826 & 0.0021 \\
+HeadLap & 0.6983 & 0.7068 & -0.0085 & 0.4000 & 0.7773 & 0.0125 \\
+Hess16HMC & 0.1468 & 0.1468 & -1.6e-05 & 0.4000 & 0.9994 & 3.8e-05 \\
+Hess32HMC & 0.1461 & 0.1461 & 3.6e-05 & 0.8000 & 0.9993 & 3.7e-05 \\
+KFACLap & 0.1456 & 0.1456 & -2.2e-05 & 0.6000 & 0.9334 & 0.0002 \\
+LowRank32Lap & 0.1358 & 0.1457 & -0.0098 & 0.0000 & 0.7402 & 0.0098 \\
+LowRankLap & 0.1351 & 0.1456 & -0.0105 & 0.0000 & 0.7359 & 0.0105 \\
+RandHMC & 0.1440 & 0.1440 & -2.2e-05 & 0.2000 & 0.9766 & 6.8e-05 \\
+SGHMC move & 0.1419 & 0.1457 & -0.0037 & 0.0000 & 0.6796 & 0.0037 \\
+SGLD move & 0.1425 & 0.1441 & -0.0017 & 0.0000 & 0.7362 & 0.0017 \\
+SGLD-3 & 0.1368 & 0.1368 & -4.9e-06 & 0.4000 & 0.9969 & 3.4e-05 \\
+SWAG & 0.1361 & 0.1361 & -5.4e-05 & 0.6000 & 0.9265 & 0.0003 \\
+SWAG20 & 0.1454 & 0.1455 & -7.0e-05 & 0.2000 & 0.9528 & 0.0001 \\
+TrajHMC & 0.2290 & 0.2292 & -0.0002 & 0.4000 & 0.9915 & 0.0002 \\
+cSGLD move & 0.1422 & 0.1454 & -0.0033 & 0.0000 & 0.7046 & 0.0033 \\
+Fashion & 0.2114 & 0.2122 & -0.0008 & 0.0000 & 0.9212 & 0.0008 \\
+MNIST & 0.2373 & 0.2385 & -0.0011 & 0.0000 & 0.9298 & 0.0011 \\
+\bottomrule
+\end{tabular}
+\caption{Mode/ticket distribution-equivalence audit for selected
+posterior families. Delta is posterior-to-IMP minus matched
+chain-start-to-IMP. Wins is the fraction of seed-level paired
+posterior-chain deltas above zero; W-dist. is the two-sample
+Wasserstein distance over grouped seed means. A positive posterior
+mode account would require positive deltas rather than practical
+ties to chain-start magnitude supports.}
+\label{tab:mode-ticket-equivalence-audit}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{1.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrrrrrrrrr}
+\toprule
+Setting & Comparison & Modes & $H_n$ & $n_L$ & $n_T$ & KS p & Ham. & Logit & Act. & H-cost & A-cost & Pass \\
+\midrule
+Digits MLP & posterior samples vs tickets & 1 & 0.0000 & 50 & 5 & 0.0788 & 0.6314 & 0.9819 & n/a & 0.0181 & n/a & 2/4 \\
+Digits MLP & posterior modes vs tickets & 1 & 0.0000 & 1 & 5 & 0.9216 & n/a & 0.9821 & n/a & 0.0179 & n/a & 3/4 \\
+CIFAR subset ResNet & posterior samples vs tickets & 1 & 0.0000 & 25 & 5 & 1.1e-05 & 0.6000 & 0.8878 & n/a & 0.1122 & n/a & 2/4 \\
+CIFAR subset ResNet & posterior modes vs tickets & 1 & 0.0000 & 1 & 5 & 0.1388 & n/a & 0.9077 & n/a & 0.0923 & n/a & 3/4 \\
+CIFAR subset act. pilot & posterior samples vs tickets & 3 & 0.4057 & 15 & 3 & 0.0330 & 0.6571 & 0.9022 & 0.8726 & 0.0978 & 0.1274 & 4/6 \\
+CIFAR subset act. pilot & posterior modes vs tickets & 3 & 0.4057 & 3 & 3 & 0.2264 & 1.0000 & 0.9014 & 0.8704 & 0.0986 & 0.1296 & 6/6 \\
+CIFAR full ResNet & posterior samples vs tickets & 1 & 0.0000 & 50 & 5 & 5.3e-09 & 0.0033 & 0.9369 & 0.9172 & 0.0631 & 0.0828 & 4/6 \\
+CIFAR full ResNet & posterior modes vs tickets & 1 & 0.0000 & 1 & 5 & 0.0329 & n/a & 0.9383 & 0.9179 & 0.0617 & 0.0821 & 4/6 \\
+CIFAR full aligned & aligned posterior samples vs tickets & 1 & 0.0000 & 50 & 5 & 2.3e-09 & 0.0000 & 0.9373 & 0.9168 & 0.0627 & 0.0832 & 4/6 \\
+CIFAR full aligned & aligned posterior modes vs tickets & 1 & 0.0000 & 1 & 5 & 0.0413 & n/a & 0.9363 & 0.9160 & 0.0637 & 0.0840 & 4/6 \\
+CIFAR full weight-aligned & weight-aligned chain start magnitude vs tickets & 1 & 0.0000 & 5 & 5 & 4.8e-05 & 0.0000 & 0.9374 & 0.9195 & 0.0626 & 0.0805 & 4/6 \\
+CIFAR full weight-aligned & weight-aligned posterior samples vs tickets & 1 & 0.0000 & 50 & 5 & 1.2e-08 & 0.1290 & 0.9336 & 0.9131 & 0.0664 & 0.0869 & 4/6 \\
+CIFAR full weight-aligned & weight-aligned posterior modes vs tickets & 1 & 0.0000 & 1 & 5 & 0.0413 & n/a & 0.9327 & 0.9132 & 0.0673 & 0.0868 & 4/6 \\
+CIFAR full cSGLD multi-chain & chain start magnitude vs tickets & 1 & 0.0000 & 15 & 5 & 5.2e-07 & 0.0857 & 0.9363 & 0.9196 & 0.0637 & 0.0804 & 4/6 \\
+CIFAR full cSGLD multi-chain & posterior samples vs tickets & 1 & 0.0000 & 75 & 5 & 3.3e-08 & 0.2461 & 0.9327 & 0.9144 & 0.0673 & 0.0856 & 4/6 \\
+CIFAR full cSGLD multi-chain & posterior modes vs tickets & 1 & 0.0000 & 1 & 5 & 0.0413 & n/a & 0.9288 & 0.9115 & 0.0712 & 0.0885 & 4/6 \\
+CIFAR full cSGLD independent & chain start magnitude vs tickets & 1 & 0.0000 & 15 & 5 & 7.6e-08 & 0.0000 & 0.9306 & 0.9105 & 0.0694 & 0.0895 & 4/6 \\
+CIFAR full cSGLD independent & posterior samples vs tickets & 1 & 0.0000 & 75 & 5 & 9.3e-10 & 0.0000 & 0.9269 & 0.9051 & 0.0731 & 0.0949 & 4/6 \\
+CIFAR full cSGLD independent & posterior modes vs tickets & 1 & 0.0000 & 1 & 5 & 0.0413 & n/a & 0.9242 & 0.9054 & 0.0758 & 0.0946 & 4/6 \\
+CIFAR full LowRank128Lap & chain start magnitude vs tickets & 1 & 0.0000 & 5 & 5 & 9.0e-05 & 0.0000 & 0.9385 & 0.9218 & 0.0615 & 0.0782 & 4/6 \\
+CIFAR full LowRank128Lap & posterior samples vs tickets & 1 & 0.0000 & 50 & 5 & 2.0e-06 & 0.8163 & 0.9319 & 0.9096 & 0.0681 & 0.0904 & 5/6 \\
+CIFAR full LowRank128Lap & posterior modes vs tickets & 1 & 0.0000 & 1 & 5 & 0.1388 & n/a & 0.9289 & 0.9023 & 0.0711 & 0.0977 & 5/6 \\
+CIFAR full JointDiagLap270k & chain start magnitude vs tickets & 1 & 0.0000 & 5 & 5 & 2.5e-05 & 0.0000 & 0.9389 & 0.9221 & 0.0611 & 0.0779 & 4/6 \\
+CIFAR full JointDiagLap270k & posterior samples vs tickets & 1 & 0.0000 & 25 & 5 & 1.1e-08 & 0.0000 & 0.9373 & 0.9199 & 0.0627 & 0.0801 & 4/6 \\
+CIFAR full JointDiagLap270k & posterior modes vs tickets & 1 & 0.0000 & 1 & 5 & 0.0413 & n/a & 0.9379 & 0.9225 & 0.0621 & 0.0775 & 4/6 \\
+\bottomrule
+\end{tabular}
+}%
+\caption{Direct proposal-level mode/ticket distribution probe on
+digits MLP plus CIFAR-10 ResNet-20 subset and full-data settings. Posterior sample masks
+and mean-shift posterior-mode representatives are compared with
+IMP tickets using the proposal's layer-sparsity KS, mask-Hamming
+overlap, logit-space CKA, final-hidden-activation CKA, and
+Hungarian-cost thresholds; Modes and $H_n$ report mean-shift
+cluster count and normalized raw-parameter basin entropy.}
+\label{tab:direct-mode-ticket-distribution}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Source & Acc. & NLL & ECE & MSP AUROC & Ent. AUROC & MSP FPR95 \\
+\midrule
+Dense & 0.8866 & 0.3536 & 0.0353 & 0.8230 & 0.8326 & 0.7636 \\
+IMP & 0.8953 & 0.3387 & 0.0393 & 0.8306 & 0.8392 & 0.7508 \\
+SWAG ens. & 0.8688 & 0.4018 & 0.0285 & 0.8050 & 0.8171 & 0.7715 \\
+Learned random & 0.8449 & 0.4632 & 0.0270 & 0.7897 & 0.8024 & 0.7870 \\
+Gem-Miner & 0.8418 & 0.4694 & 0.0283 & 0.7853 & 0.7985 & 0.7969 \\
+Var. prune & 0.8301 & 0.5008 & 0.0255 & 0.7754 & 0.7897 & 0.8101 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR-10 calibration and CIFAR-100 OOD
+diagnostics. SWAG ens. averages ten SWAG predictive samples per
+seed. Learned random, Gem-Miner, and Var. prune rows are trained
+from initialization at the IMP sparsity. MSP and entropy AUROC use
+maximum softmax probability and negative predictive entropy as
+in-distribution scores; lower FPR95 is better.}
+\label{tab:cifar-calibration-ood-stats}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Source & Acc. & Support-IMP & Support-Dense & Support-Rewind \\
+\midrule
+Epoch 1 & 0.4017 & 0.1782 & 0.2231 & 1.0000 \\
+Epoch 5 & 0.6881 & 0.2197 & 0.3582 & 0.3724 \\
+Epoch 10 & 0.7630 & 0.2342 & 0.5350 & 0.2746 \\
+Epoch 20 & 0.8492 & 0.2328 & 0.8433 & 0.2273 \\
+Epoch 30 & 0.8841 & 0.2312 & 1.0000 & 0.2231 \\
+max abs & -- & 0.2342 & 0.5616 & 0.3517 \\
+mean abs & -- & 0.2388 & 0.5314 & 0.4214 \\
+rms abs & -- & 0.2400 & 0.5713 & 0.4046 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR dense-trajectory controls. The epoch-1 state is the IMP rewind point. Checkpoint rows use magnitude supports at that epoch; aggregate rows use trajectory score masks across checkpoints.}
+\label{tab:cifar-trajectory-stats}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrr}
+\toprule
+Source & Kind & Accuracy & Acc.-IMP & Support-IMP \\
+\midrule
+IMP & IMP & 0.8983 & 0.0006 & 1.0000 \\
+random 0 & random & 0.8422 & -0.0555 & 0.0922 \\
+Epoch 1 & checkpoint & 0.8540 & -0.0437 & 0.1785 \\
+Epoch 10 & checkpoint & 0.8730 & -0.0247 & 0.2374 \\
+Epoch 30 & checkpoint & 0.8826 & -0.0151 & 0.2356 \\
+rms abs & aggregate & 0.8739 & -0.0238 & 0.2429 \\
+mean abs & aggregate & 0.8743 & -0.0234 & 0.2421 \\
+path length & aggregate & 0.8549 & -0.0428 & 0.1772 \\
+rewind rms movement & aggregate & 0.8572 & -0.0405 & 0.1639 \\
+Gem-Miner & Gem-Miner & 0.8471 & -0.0499 & 0.0917 \\
+Var. prune & Var. prune & 0.8306 & -0.0669 & 0.0907 \\
+Hard concrete & Hard concrete & 0.2766 & -0.6204 & 0.0922 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR trajectory-mask retraining controls. All masks are trained for 30 epochs from the same epoch-1 rewind state at the IMP sparsity. Acc.-IMP is candidate accuracy minus the final IMP accuracy from the corresponding seed.}
+\label{tab:cifar-trajectory-mask-training}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+Source & Kind & Acc. & ECE & Brier & Acc.-IMP & Supp.-IMP & Supp.-Dense \\
+\midrule
+IMP & IMP & 0.9711 & 0.0211 & 0.0410 & 0.0000 & 1.0000 & 0.7604 \\
+random 0 & random & 0.9489 & 0.0398 & 0.0821 & -0.0222 & 0.2151 & 0.2139 \\
+Gem-Miner & Gem-Miner & 0.9550 & 0.0392 & 0.0753 & -0.0161 & 0.2081 & 0.2082 \\
+Var. prune & Var. prune & 0.9633 & 0.0250 & 0.0532 & -0.0078 & 0.3822 & 0.4010 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed digits MLP variational pruning sanity check. Var. prune optimizes Bernoulli mask probabilities on frozen initialization weights with Concrete samples, KL, sparsity, and entropy penalties before retraining the selected hard mask.}
+\label{tab:digits-variational-pruning}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrr}
+\toprule
+Base & Variant & Alpha & Accuracy & Acc.-IMP \\
+\midrule
+Epoch 30 & top IMP & 0 & 0.8797 & -0.0175 \\
+Epoch 30 & top IMP & 0.5 & 0.8882 & -0.0090 \\
+Epoch 30 & random non-IMP & 0.5 & 0.8780 & -0.0192 \\
+Epoch 30 & top IMP & 1 & 0.8966 & -0.0006 \\
+rms abs & top IMP & 0 & 0.8733 & -0.0238 \\
+rms abs & top IMP & 0.5 & 0.8851 & -0.0121 \\
+rms abs & random non-IMP & 0.5 & 0.8705 & -0.0266 \\
+Epoch 10 & top IMP & 0 & 0.8712 & -0.0259 \\
+Epoch 10 & top IMP & 0.5 & 0.8855 & -0.0116 \\
+Epoch 10 & random non-IMP & 0.5 & 0.8704 & -0.0268 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR trajectory residual controls. Starting from a base trajectory mask, an IMP-residual row swaps the indicated fraction of base-only support for IMP-only support; a random-residual row swaps the same number of positions for non-IMP random support.}
+\label{tab:cifar-trajectory-residual}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Base & Base & Low rm & Rand. rm & High rm & Rand. non \\
+\midrule
+Epoch 30 & 0.8792 & 0.8881 & 0.8883 & 0.8906 & 0.8779 \\
+rms abs & 0.8738 & 0.8874 & 0.8896 & 0.8914 & 0.8709 \\
+Epoch 10 & 0.8687 & 0.8862 & 0.8922 & 0.8920 & 0.8701 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR residual removal-order controls. Low/Rand./High rm add the same top IMP-only residual support and vary which base-only weights are removed by low, random, or high base score. Rand. non removes low base-score weights but adds same-size non-IMP random support.}
+\label{tab:cifar-residual-removal-controls}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Base & Support-IMP & IMP-only(k) & Prune rnd. & Pred. AUC & Pred. recall \\
+\midrule
+Epoch 30 & 0.2323 & 28.4k & 2.9003 & 0.6197 & 0.2175 \\
+rms abs & 0.2412 & 27.8k & 2.9745 & 0.6165 & 0.2087 \\
+Epoch 10 & 0.2359 & 28.1k & 2.9669 & 0.6206 & 0.2206 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR residual anatomy. IMP-only(k) is the number of IMP-kept weights missing from the base support. Prune rnd. is the mean IMP pruning round for base-only weights. The predictor is a held-out logistic model over dense-trajectory rank features plus stage indicators, trained to recover IMP-only residual support among non-base weights.}
+\label{tab:cifar-residual-anatomy}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Base & Base & Oracle & Pred. & Random & Pred. prec. & Rand. prec. \\
+\midrule
+Epoch 30 & 0.8808 & 0.8892 & 0.8793 & 0.8805 & 0.1866 & 0.1253 \\
+rms abs & 0.8740 & 0.8866 & 0.8744 & 0.8744 & 0.1834 & 0.1233 \\
+Epoch 10 & 0.8712 & 0.8890 & 0.8728 & 0.8724 & 0.1843 & 0.1239 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR functional residual-predictor masks. For each base, the held-out predictor swaps half of base-only support for non-base weights with highest predicted IMP-only probability. Oracle uses true IMP-only residual support, and random uses same-size held-out non-IMP-random support. Prec. is the IMP-only precision of added weights.}
+\label{tab:cifar-residual-predictor-mask}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Base & Base & Oracle & Cross-seed & Random & Cross prec. & Rand. prec. \\
+\midrule
+Epoch 30 & 0.8815 & 0.8905 & 0.8776 & 0.8781 & 0.2413 & 0.1260 \\
+rms abs & 0.8733 & 0.8878 & 0.8731 & 0.8725 & 0.2238 & 0.1246 \\
+Epoch 10 & 0.8730 & 0.8890 & 0.8745 & 0.8726 & 0.2388 & 0.1264 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR cross-seed residual-transfer masks. For each held-out target seed, the predictor is trained on non-base candidate weights from the other four seeds, then swaps half of target base-only support for target non-base weights with highest predicted IMP-only probability. Oracle and random use the target seed only.}
+\label{tab:cifar-residual-cross-seed-transfer}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Base & Base & Oracle & Src vote & Aln src & Vote rand. & Aln rand. & Tgt rand. & Src prec. \\
+\midrule
+Epoch 30 & 0.8813 & 0.8886 & 0.8769 & 0.8797 & 0.8774 & 0.8809 & 0.8779 & 0.1513 \\
+rms abs & 0.8737 & 0.8872 & 0.8739 & 0.8727 & 0.8735 & 0.8743 & 0.8728 & 0.1451 \\
+Epoch 10 & 0.8720 & 0.8890 & 0.8725 & 0.8710 & 0.8732 & 0.8740 & 0.8719 & 0.1491 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR direct cross-seed residual-support transfer. Source-vote variants add target non-base coordinates selected by votes from the other seeds' oracle residual supports. Aln src and Aln rand. first map source channels to target channels by activation-correlation Hungarian matching. Tgt rand. is a target-seed random non-base residual control. Src prec. is target IMP-only precision among source-vote additions.}
+\label{tab:cifar-residual-direct-transfer}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Base & T base & T oracle & T rand. & M base & M oracle & M rand. \\
+\midrule
+Epoch 30 & 0.8827 & 0.8893 & 0.8791 & 0.8641 & 0.8926 & 0.8649 \\
+rms abs & 0.8743 & 0.8892 & 0.8745 & 0.8605 & 0.8910 & 0.8628 \\
+Epoch 10 & 0.8744 & 0.8892 & 0.8712 & 0.8607 & 0.8942 & 0.8636 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR residual base-compatibility controls. T rows use the actual trajectory base. M rows replace that base with a per-parameter random base preserving the same IMP/non-IMP counts and therefore the same base-to-IMP overlap before adding oracle or random residual support.}
+\label{tab:cifar-residual-base-compatibility}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{1.8pt}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Base & M base & Top & Dense & RMS & RMS-d & Std & Rand & Dense ovlp & RMS ovlp & Rand ovlp \\
+\midrule
+Epoch 30 & 0.8606 & 0.8915 & 0.8821 & 0.8852 & 0.8770 & 0.8710 & 0.8783 & 0.5573 & 0.5560 & 0.5006 \\
+rms abs & 0.8631 & 0.8928 & 0.8812 & 0.8834 & 0.8745 & 0.8717 & 0.8795 & 0.5528 & 0.5510 & 0.5011 \\
+Epoch 10 & 0.8609 & 0.8911 & 0.8827 & 0.8829 & 0.8764 & 0.8710 & 0.8791 & 0.5565 & 0.5556 & 0.5002 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR residual posterior-decomposition controls on IMP-overlap-matched random bases. Top adds the target oracle IMP-only residual. Dense, RMS, RMS-d, Std, and Rand add the same number of target IMP-only residual weights ranked by dense final magnitude, diagonal-Laplace posterior RMS, posterior RMS minus dense magnitude, posterior standard deviation, or uniform sampling. Ovlp columns report the fraction of additions that also belong to the top oracle additions.}
+\label{tab:cifar-residual-base-ordering}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Base & Base & Oracle & Rand. IMP & Global non & Param+score non \\
+\midrule
+Epoch 30 & 0.8803 & 0.8872 & 0.8818 & 0.8767 & 0.8758 \\
+rms abs & 0.8708 & 0.8858 & 0.8794 & 0.8701 & 0.8716 \\
+Epoch 10 & 0.8678 & 0.8854 & 0.8764 & 0.8695 & 0.8685 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR residual stratified controls. All non-base variants remove the same low-base-score weights as the oracle. Rand. IMP adds random IMP-only residual weights. Global non adds random non-IMP non-base weights. Param+score non matches the oracle added weights by parameter tensor and within-parameter score decile, but excludes IMP-only weights.}
+\label{tab:cifar-residual-stratified-controls}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Base & Base & Oracle & R1 acc. & R3 acc. & R5 acc. & R1 prec. & R3 prec. \\
+\midrule
+Epoch 30 & 0.8793 & 0.8898 & 0.8792 & 0.8829 & 0.8867 & 0.4431 & 0.7523 \\
+rms abs & 0.8736 & 0.8881 & 0.8771 & 0.8832 & 0.8857 & 0.4308 & 0.7459 \\
+Epoch 10 & 0.8724 & 0.8884 & 0.8772 & 0.8826 & 0.8861 & 0.4395 & 0.7536 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR residual IMP-process probe. R1/R3/R5 rows add half residual support from IMP round-survivor candidates ranked by the corresponding round-trained weights. Prec. is the fraction of added weights that survive in the final IMP mask; R5 precision is one by construction.}
+\label{tab:cifar-residual-imp-process}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Base & Rnd & Top acc. & Rand. acc. & Low acc. & Top final & Rand. final & Low final & Top oracle & Rand. oracle & Low oracle \\
+\midrule
+Epoch 30 & 1 & 0.8806 & 0.8774 & 0.8776 & 0.4373 & 0.1913 & 0.0811 & 0.2706 & 0.0960 & 0.0340 \\
+Epoch 30 & 3 & 0.8839 & 0.8813 & 0.8770 & 0.7530 & 0.4357 & 0.1881 & 0.4777 & 0.2176 & 0.0652 \\
+Epoch 30 & 5 & 0.8887 & 0.8847 & 0.8815 & 1.0000 & 1.0000 & 1.0000 & 0.6818 & 0.4998 & 0.3182 \\
+rms abs & 1 & 0.8788 & 0.8733 & 0.8738 & 0.4268 & 0.1871 & 0.0808 & 0.2617 & 0.0924 & 0.0343 \\
+rms abs & 3 & 0.8830 & 0.8759 & 0.8726 & 0.7496 & 0.4294 & 0.1885 & 0.4734 & 0.2152 & 0.0657 \\
+rms abs & 5 & 0.8857 & 0.8803 & 0.8759 & 1.0000 & 1.0000 & 1.0000 & 0.6803 & 0.4987 & 0.3197 \\
+Epoch 10 & 1 & 0.8795 & 0.8724 & 0.8699 & 0.4358 & 0.1880 & 0.0818 & 0.2698 & 0.0933 & 0.0345 \\
+Epoch 10 & 3 & 0.8822 & 0.8746 & 0.8727 & 0.7555 & 0.4347 & 0.1898 & 0.4795 & 0.2178 & 0.0657 \\
+Epoch 10 & 5 & 0.8855 & 0.8805 & 0.8755 & 1.0000 & 1.0000 & 1.0000 & 0.6821 & 0.4992 & 0.3179 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Five-seed CIFAR residual IMP-process ranking controls. Top uses the highest round-trained scores among round-survivor candidates; Rand. samples the same round-survivor candidate set; Low uses the lowest round-trained scores. Final is the fraction of added weights that survive in the final IMP mask; oracle is overlap with the final oracle added subset.}
+\label{tab:cifar-residual-imp-process-controls}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Base & Rnd & Score acc. & Match acc. & $\Delta$ & Wins & Oracle \\
+\midrule
+Epoch 10 & 1 & 0.8823 & 0.8799 & 0.0024 & 5/5 & 0.5568 \\
+Epoch 10 & 3 & 0.8825 & 0.8789 & 0.0036 & 4/5 & 0.5976 \\
+Epoch 10 & 5 & 0.8851 & 0.8820 & 0.0030 & 5/5 & 0.6792 \\
+Epoch 30 & 1 & 0.8841 & 0.8843 & -0.0002 & 3/5 & 0.5569 \\
+Epoch 30 & 3 & 0.8842 & 0.8831 & 0.0011 & 4/5 & 0.5971 \\
+Epoch 30 & 5 & 0.8860 & 0.8845 & 0.0014 & 3/5 & 0.6788 \\
+rms abs & 1 & 0.8824 & 0.8787 & 0.0038 & 4/5 & 0.5538 \\
+rms abs & 3 & 0.8821 & 0.8808 & 0.0013 & 3/5 & 0.5943 \\
+rms abs & 5 & 0.8854 & 0.8836 & 0.0018 & 4/5 & 0.6773 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR residual IMP-process oracle-overlap-matched control. Score acc. uses the round-trained score ordering inside the final-IMP residual candidate set. Match acc. samples random final-IMP residual additions with the same final-oracle overlap count. $\Delta$ is score minus matched random accuracy; wins are positive paired seed deltas.}
+\label{tab:cifar-residual-imp-process-oracle-matched}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Base & Rnd & Round acc. & Dense acc. & Base acc. & $\Delta_D$ & WinD & $\Delta_B$ & WinB & Oracle \\
+\midrule
+Epoch 10 & 1 & 0.8833 & 0.8827 & 0.8824 & 0.0005 & 3/5 & 0.0008 & 4/5 & 0.5559 \\
+Epoch 10 & 3 & 0.8838 & 0.8827 & 0.8824 & 0.0011 & 4/5 & 0.0014 & 4/5 & 0.5984 \\
+Epoch 10 & 5 & 0.8872 & 0.8827 & 0.8824 & 0.0045 & 5/5 & 0.0048 & 5/5 & 0.6780 \\
+Epoch 30 & 1 & 0.8861 & 0.8831 & 0.8831 & 0.0030 & 5/5 & 0.0030 & 5/5 & 0.5574 \\
+Epoch 30 & 3 & 0.8874 & 0.8831 & 0.8831 & 0.0042 & 4/5 & 0.0042 & 4/5 & 0.5992 \\
+Epoch 30 & 5 & 0.8873 & 0.8831 & 0.8831 & 0.0041 & 5/5 & 0.0041 & 5/5 & 0.6779 \\
+rms abs & 1 & 0.8820 & 0.8823 & 0.8820 & -0.0004 & 2/5 & -4.0e-05 & 2/5 & 0.5536 \\
+rms abs & 3 & 0.8844 & 0.8823 & 0.8820 & 0.0021 & 4/5 & 0.0024 & 5/5 & 0.5950 \\
+rms abs & 5 & 0.8870 & 0.8823 & 0.8820 & 0.0046 & 5/5 & 0.0050 & 5/5 & 0.6760 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Five-seed CIFAR residual IMP-process score-source controls. Candidate set is final-IMP residual for all variants; dense/base controls rank that candidate set by dense-final or base-source magnitudes. $\Delta_D$/$\Delta_B$ are round-score minus dense/base score accuracy; wins are positive paired seed deltas.}
+\label{tab:cifar-residual-imp-process-score-source}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Base & Rnd & Round acc. & Excl. acc. & $\Delta$ & Wins & Round oracle & Excl. oracle \\
+\midrule
+Epoch 10 & 1 & 0.8844 & 0.8770 & 0.0074 & 5/5 & 0.5602 & 0.4398 \\
+Epoch 10 & 3 & 0.8858 & 0.8782 & 0.0076 & 5/5 & 0.5995 & 0.4005 \\
+Epoch 10 & 5 & 0.8872 & 0.8779 & 0.0093 & 5/5 & 0.6762 & 0.3238 \\
+Epoch 30 & 1 & 0.8848 & 0.8830 & 0.0018 & 4/5 & 0.5608 & 0.4392 \\
+Epoch 30 & 3 & 0.8867 & 0.8834 & 0.0033 & 5/5 & 0.5983 & 0.4017 \\
+Epoch 30 & 5 & 0.8867 & 0.8824 & 0.0043 & 5/5 & 0.6755 & 0.3245 \\
+rms abs & 1 & 0.8846 & 0.8779 & 0.0067 & 5/5 & 0.5581 & 0.4419 \\
+rms abs & 3 & 0.8858 & 0.8777 & 0.0081 & 5/5 & 0.5959 & 0.4041 \\
+rms abs & 5 & 0.8861 & 0.8793 & 0.0068 & 5/5 & 0.6733 & 0.3267 \\
+\bottomrule
+\end{tabular}
+\caption{Five-seed CIFAR residual IMP-process round-exclusion control. Round acc. uses the round-trained score ordering inside the final-IMP residual candidate set. Excl. acc. removes the round-selected additions from that candidate set, then chooses the best remaining final-IMP residual additions by final IMP magnitude under the same support budget. $\Delta$ is round minus excluded accuracy; wins are positive paired seed deltas.}
+\label{tab:cifar-residual-imp-process-round-exclusion}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Base & Rnd & Round acc. & Excl. acc. & Tensor excl. & $\Delta_E$ & WinE & $\Delta_T$ & WinT & Tensor oracle \\
+\midrule
+rms abs & 5 & 0.8855 & 0.8753 & 0.8764 & 0.0103 & 5/5 & 0.0091 & 5/5 & 0.4153 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Five-seed CIFAR residual IMP-process tensor-matched round-exclusion control at the RMS trajectory base and round 5. Tensor excl. removes the round-selected additions, then chooses replacement final-IMP residual additions matched to the removed coordinates by parameter tensor before applying the final IMP magnitude score. $\Delta_E$ is round minus the unrestricted excluded oracle; $\Delta_T$ is round minus the tensor-matched excluded oracle.}
+\label{tab:cifar-residual-imp-process-layer-exclusion}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Base & Rnd & Round acc. & Tensor excl. & Tensor+score excl. & $\Delta_T$ & WinT & $\Delta_{TS}$ & WinTS \\
+\midrule
+rms abs & 5 & 0.8878 & 0.8784 & 0.8837 & 0.0095 & 5/5 & 0.0041 & 5/5 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Five-seed CIFAR residual IMP-process tensor+score-matched round-exclusion control at the RMS trajectory base and round 5. Tensor+score excl. removes the round-selected additions, then chooses replacement final-IMP residual additions matched to the removed coordinates by parameter tensor and within-tensor round-score decile before applying final IMP magnitude. $\Delta_T$ is round minus the tensor-matched excluded oracle; $\Delta_{TS}$ is round minus the tensor+score-matched excluded oracle.}
+\label{tab:cifar-residual-imp-process-tensor-score-exclusion}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Base & Rnd & Round acc. & Resid. acc. & Dense acc. & Base acc. & $\Delta_R$ & WinR & Oracle drop \\
+\midrule
+rms abs & 5 & 0.8852 & 0.8811 & 0.8814 & 0.8811 & 0.0041 & 5/5 & 0.1830 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Five-seed CIFAR residual IMP-process projection control at the RMS trajectory base and round 5. Resid. acc. uses a round-score ordering after linearly projecting out the base-source, dense-final, and final-IMP magnitude scores inside the final-IMP residual candidate pool. $\Delta_R$ is round minus residualized-score accuracy; Oracle drop is round oracle overlap minus residualized oracle overlap.}
+\label{tab:cifar-residual-imp-process-projection}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Base & Rnd & Round acc. & Post-resid. acc. & Dense acc. & Base acc. & $\Delta_P$ & WinP & Oracle drop \\
+\midrule
+rms abs & 5 & 0.8847 & 0.8825 & 0.8815 & 0.8797 & 0.0023 & 5/5 & 0.1923 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Five-seed CIFAR residual IMP-process posterior-projection control at the RMS trajectory base and round 5. Post-resid. acc. uses a round-score ordering after linearly projecting out the base-source, dense-final, final-IMP magnitude, and diagonal-Laplace posterior RMS/std/excess scores inside the final-IMP residual candidate pool. $\Delta_P$ is round minus posterior-residualized accuracy; Oracle drop is round oracle overlap minus posterior-residualized oracle overlap.}
+\label{tab:cifar-residual-imp-process-posterior-projection}
+\end{table}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Base & Rnd & Round acc. & Subspace-resid. acc. & Dense acc. & Base acc. & $\Delta_S$ & WinS & Oracle drop \\
+\midrule
+rms abs & 5 & 0.8869 & 0.8821 & 0.8822 & 0.8822 & 0.0048 & 5/5 & 0.1890 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Five-seed CIFAR residual IMP-process learned-subspace control at the RMS trajectory base and round 5. Subspace-resid. acc. uses a round-score ordering after projecting out the top rank-8 PCA component scores learned from dense trajectory, final-IMP magnitude, and earlier IMP-round scores inside the final-IMP residual candidate pool. $\Delta_S$ is round minus learned-subspace-residualized accuracy; Oracle drop is round oracle overlap minus learned-subspace-residualized oracle overlap.}
+\label{tab:cifar-residual-imp-process-learned-subspace}
+\end{table}
