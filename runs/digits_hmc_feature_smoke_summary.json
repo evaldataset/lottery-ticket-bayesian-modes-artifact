@@ -1,0 +1,170 @@
+{
+  "num_runs": 1,
+  "runs": [
+    {
+      "seed": 0.0,
+      "dense_accuracy": 0.1,
+      "imp_accuracy": 0.09166666666666666,
+      "imp_sparsity": 0.30067567567567566,
+      "posterior_jaccard_mean": 1.0,
+      "random_jaccard_mean": 0.5432260959251678,
+      "posterior_minus_random_jaccard": 0.4567739040748322,
+      "jaccard_cohens_d": 36.917851797296706,
+      "mannwhitney_greater_pvalue": 0.019746877552104688,
+      "dense_magnitude_to_imp_jaccard": 1.0,
+      "initial_magnitude_to_imp_jaccard": 0.9620853080568721,
+      "chain_start_magnitude_to_imp_jaccard_mean": 1.0,
+      "posterior_to_chain_start_magnitude_jaccard_mean": 1.0,
+      "state_num_clusters": 2.0,
+      "function_num_clusters": 2.0,
+      "hmc_accept_rate": 1.0,
+      "hmc_sample_accuracy_mean": 0.1,
+      "hmc_sample_to_dense_prediction_agreement_mean": 1.0,
+      "hmc_sample_to_imp_prediction_agreement_mean": 0.9166666865348816,
+      "hmc_step_size": 1e-05,
+      "hmc_leapfrog_steps": 2.0,
+      "hmc_energy_first": 3347.015869140625,
+      "hmc_energy_last": 3347.044189453125
+    }
+  ],
+  "summary": {
+    "seed": {
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "dense_accuracy": {
+      "mean": 0.1,
+      "std": 0.0,
+      "min": 0.1,
+      "max": 0.1
+    },
+    "imp_accuracy": {
+      "mean": 0.09166666666666666,
+      "std": 0.0,
+      "min": 0.09166666666666666,
+      "max": 0.09166666666666666
+    },
+    "imp_sparsity": {
+      "mean": 0.30067567567567566,
+      "std": 0.0,
+      "min": 0.30067567567567566,
+      "max": 0.30067567567567566
+    },
+    "posterior_jaccard_mean": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "random_jaccard_mean": {
+      "mean": 0.5432260959251678,
+      "std": 0.0,
+      "min": 0.5432260959251678,
+      "max": 0.5432260959251678
+    },
+    "posterior_minus_random_jaccard": {
+      "mean": 0.4567739040748322,
+      "std": 0.0,
+      "min": 0.4567739040748322,
+      "max": 0.4567739040748322
+    },
+    "jaccard_cohens_d": {
+      "mean": 36.917851797296706,
+      "std": 0.0,
+      "min": 36.917851797296706,
+      "max": 36.917851797296706
+    },
+    "mannwhitney_greater_pvalue": {
+      "mean": 0.019746877552104688,
+      "std": 0.0,
+      "min": 0.019746877552104688,
+      "max": 0.019746877552104688
+    },
+    "dense_magnitude_to_imp_jaccard": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "initial_magnitude_to_imp_jaccard": {
+      "mean": 0.9620853080568721,
+      "std": 0.0,
+      "min": 0.9620853080568721,
+      "max": 0.9620853080568721
+    },
+    "chain_start_magnitude_to_imp_jaccard_mean": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "posterior_to_chain_start_magnitude_jaccard_mean": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "state_num_clusters": {
+      "mean": 2.0,
+      "std": 0.0,
+      "min": 2.0,
+      "max": 2.0
+    },
+    "function_num_clusters": {
+      "mean": 2.0,
+      "std": 0.0,
+      "min": 2.0,
+      "max": 2.0
+    },
+    "hmc_accept_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "hmc_sample_accuracy_mean": {
+      "mean": 0.1,
+      "std": 0.0,
+      "min": 0.1,
+      "max": 0.1
+    },
+    "hmc_sample_to_dense_prediction_agreement_mean": {
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "hmc_sample_to_imp_prediction_agreement_mean": {
+      "mean": 0.9166666865348816,
+      "std": 0.0,
+      "min": 0.9166666865348816,
+      "max": 0.9166666865348816
+    },
+    "hmc_step_size": {
+      "mean": 1e-05,
+      "std": 0.0,
+      "min": 1e-05,
+      "max": 1e-05
+    },
+    "hmc_leapfrog_steps": {
+      "mean": 2.0,
+      "std": 0.0,
+      "min": 2.0,
+      "max": 2.0
+    },
+    "hmc_energy_first": {
+      "mean": 3347.015869140625,
+      "std": 0.0,
+      "min": 3347.015869140625,
+      "max": 3347.015869140625
+    },
+    "hmc_energy_last": {
+      "mean": 3347.044189453125,
+      "std": 0.0,
+      "min": 3347.044189453125,
+      "max": 3347.044189453125
+    }
+  }
+}
