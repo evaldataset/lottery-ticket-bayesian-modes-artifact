@@ -1,0 +1,1446 @@
+{
+  "date": "2026-05-07",
+  "overall": {
+    "dataset": "cifar10",
+    "model": "resnet20",
+    "artifact_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_aligned_saved_artifacts_r5_p0p3/20260506_230706/mask_artifacts.npz",
+    "parameter_count": 270896,
+    "parameter_name_count": 22,
+    "resnet_channel_key_count": 19,
+    "objective": "mask",
+    "max_iters": 6,
+    "max_pairs_per_comparison": 5,
+    "comparison_count": 6,
+    "global_channel_coordinate_descent_supported": true,
+    "exhaustive_graph_channel_permutation_supported": false,
+    "limitation_statement": "This is a block-coordinate global channel-permutation robustness audit over saved masks/states. It uses exact per-key Hungarian updates but is not an exhaustive graph-isomorphism search."
+  },
+  "comparisons": [
+    {
+      "label": "raw posterior samples vs tickets",
+      "left": "posterior_sample",
+      "right": "ticket",
+      "left_count": 50,
+      "right_count": 5,
+      "optimized_pair_count": 5,
+      "record_optimal_pair_count": 5,
+      "raw_record_hamming": {
+        "mean": 0.21133866871419288,
+        "min": 0.2079764928238143,
+        "max": 0.2162305829543441
+      },
+      "global_channel_hamming": {
+        "mean": 0.21050440021262773,
+        "min": 0.2074596893272695,
+        "max": 0.2149754887484496
+      },
+      "global_channel_support_overlap_min": {
+        "mean": 0.37375570469425684,
+        "min": 0.36045158031144986,
+        "max": 0.3828109556546377
+      },
+      "hamming_improvement": {
+        "mean": 0.0008342685015651885,
+        "min": 0.0004429744256098378,
+        "max": 0.001255094205894508
+      },
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0",
+          "raw_record_hamming": 0.20817583131533873,
+          "raw_record_jaccard_keep": 0.2350866722730109,
+          "raw_record_support_overlap_min": 0.38068044543038504,
+          "best_start": "identity",
+          "global_channel_hamming": 0.2074596893272695,
+          "global_channel_jaccard_keep": 0.23671379483627375,
+          "global_channel_support_overlap_min": 0.3828109556546377,
+          "hamming_improvement": 0.000716141988069241,
+          "changed_key_count": 9,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.20817583131533873
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.2074744551414565,
+              "changed_keys": 9
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.207467072234363,
+              "changed_keys": 2
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.2074596893272695,
+              "changed_keys": 1
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.2074596893272695,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.20817583131533873,
+              "final_hamming": 0.2074596893272695,
+              "changed_key_count": 9
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.20762949619041993,
+              "final_hamming": 0.20748183804855,
+              "changed_key_count": 9
+            }
+          ]
+        },
+        {
+          "left_index": 10,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_0",
+          "right_id": "ticket_seed_1",
+          "raw_record_hamming": 0.2079764928238143,
+          "raw_record_jaccard_keep": 0.2355495251017639,
+          "raw_record_support_overlap_min": 0.3812870634746321,
+          "best_start": "local_feature",
+          "global_channel_hamming": 0.20753351839820447,
+          "global_channel_jaccard_keep": 0.2365562194459533,
+          "global_channel_support_overlap_min": 0.38260487590599607,
+          "hamming_improvement": 0.0004429744256098378,
+          "changed_key_count": 5,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.20765164491170043
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.20754828421239147,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.20753351839820447,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.20753351839820447,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.2079764928238143,
+              "final_hamming": 0.20757043293367197,
+              "changed_key_count": 5
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.20765164491170043,
+              "final_hamming": 0.20753351839820447,
+              "changed_key_count": 5
+            }
+          ]
+        },
+        {
+          "left_index": 20,
+          "right_index": 2,
+          "left_id": "posterior_seed_2_chain_0_sample_0",
+          "right_id": "ticket_seed_2",
+          "raw_record_hamming": 0.21332171755950624,
+          "raw_record_jaccard_keep": 0.2235196108729828,
+          "raw_record_support_overlap_min": 0.3653715214478684,
+          "best_start": "identity",
+          "global_channel_hamming": 0.21222166440257514,
+          "global_channel_jaccard_keep": 0.22597409591512507,
+          "global_channel_support_overlap_min": 0.36864416086450397,
+          "hamming_improvement": 0.0011000531569310967,
+          "changed_key_count": 11,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.21332171755950624
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.21222904730966866,
+              "changed_keys": 11
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.21222166440257514,
+              "changed_keys": 1
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21222166440257514,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.21332171755950624,
+              "final_hamming": 0.21222166440257514,
+              "changed_key_count": 11
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.21245053452247356,
+              "final_hamming": 0.21222166440257514,
+              "changed_key_count": 10
+            }
+          ]
+        },
+        {
+          "left_index": 30,
+          "right_index": 3,
+          "left_id": "posterior_seed_3_chain_0_sample_0",
+          "right_id": "ticket_seed_3",
+          "raw_record_hamming": 0.21098871891796114,
+          "raw_record_jaccard_keep": 0.22873682648062937,
+          "raw_record_support_overlap_min": 0.3723121526938874,
+          "best_start": "identity",
+          "global_channel_hamming": 0.21033164018663988,
+          "global_channel_jaccard_keep": 0.23021427220405846,
+          "global_channel_support_overlap_min": 0.37426695073469657,
+          "hamming_improvement": 0.0006570787313212589,
+          "changed_key_count": 7,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.21098871891796114
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.21037593762920087,
+              "changed_keys": 7
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.21033164018663988,
+              "changed_keys": 4
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21033164018663988,
+              "changed_keys": 2
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.21098871891796114,
+              "final_hamming": 0.21033164018663988,
+              "changed_key_count": 7
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.21047929832850984,
+              "final_hamming": 0.21036117181501388,
+              "changed_key_count": 7
+            }
+          ]
+        },
+        {
+          "left_index": 40,
+          "right_index": 4,
+          "left_id": "posterior_seed_4_chain_0_sample_0",
+          "right_id": "ticket_seed_4",
+          "raw_record_hamming": 0.2162305829543441,
+          "raw_record_jaccard_keep": 0.217076332918989,
+          "raw_record_support_overlap_min": 0.35671769641327505,
+          "best_start": "identity",
+          "global_channel_hamming": 0.2149754887484496,
+          "global_channel_jaccard_keep": 0.2198480849866706,
+          "global_channel_support_overlap_min": 0.36045158031144986,
+          "hamming_improvement": 0.001255094205894508,
+          "changed_key_count": 9,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.2162305829543441
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.21502716909810407,
+              "changed_keys": 9
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.2150050203768236,
+              "changed_keys": 4
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21498287165554308,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.2149754887484496,
+              "changed_keys": 1
+            },
+            {
+              "iteration": 5,
+              "hamming": 0.2149754887484496,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.2162305829543441,
+              "final_hamming": 0.2149754887484496,
+              "changed_key_count": 9
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.21553658968755537,
+              "final_hamming": 0.21504931781938455,
+              "changed_key_count": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "activation-aligned posterior samples vs tickets",
+      "left": "activation_aligned_posterior_sample",
+      "right": "activation_aligned_ticket",
+      "left_count": 50,
+      "right_count": 5,
+      "optimized_pair_count": 5,
+      "record_optimal_pair_count": 5,
+      "raw_record_hamming": {
+        "mean": 0.24401689209142993,
+        "min": 0.21690242749985233,
+        "max": 0.25135107199810997
+      },
+      "global_channel_hamming": {
+        "mean": 0.211284035201701,
+        "min": 0.20744492351308252,
+        "max": 0.21682859842891736
+      },
+      "global_channel_support_overlap_min": {
+        "mean": 0.3714363088898425,
+        "min": 0.3549386105559094,
+        "max": 0.3828548837004986
+      },
+      "hamming_improvement": {
+        "mean": 0.03273285688972889,
+        "min": 0.00945750398676981,
+        "max": 0.042163782410962136
+      },
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0",
+          "raw_record_hamming": 0.21690242749985233,
+          "raw_record_jaccard_keep": 0.2155977999679607,
+          "raw_record_support_overlap_min": 0.35471897032660504,
+          "best_start": "local_feature",
+          "global_channel_hamming": 0.20744492351308252,
+          "global_channel_jaccard_keep": 0.2367473888654977,
+          "global_channel_support_overlap_min": 0.3828548837004986,
+          "hamming_improvement": 0.00945750398676981,
+          "changed_key_count": 14,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.2084859134132656
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.207511369676924,
+              "changed_keys": 8
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.20744492351308252,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.20744492351308252,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.21690242749985233,
+              "final_hamming": 0.2074744551414565,
+              "changed_key_count": 14
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.2084859134132656,
+              "final_hamming": 0.20744492351308252,
+              "changed_key_count": 14
+            }
+          ]
+        },
+        {
+          "left_index": 12,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_2",
+          "right_id": "ticket_seed_1",
+          "raw_record_hamming": 0.25008121197802846,
+          "raw_record_jaccard_keep": 0.14680805511126785,
+          "raw_record_support_overlap_min": 0.25602899187349,
+          "best_start": "identity",
+          "global_channel_hamming": 0.20791742956706633,
+          "global_channel_jaccard_keep": 0.23568365629919122,
+          "global_channel_support_overlap_min": 0.381462771798814,
+          "hamming_improvement": 0.042163782410962136,
+          "changed_key_count": 19,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.25008121197802846
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.2141707518752584,
+              "changed_keys": 19
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.20808723643021676,
+              "changed_keys": 17
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.20791742956706633,
+              "changed_keys": 5
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.20791742956706633,
+              "changed_keys": 2
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.25008121197802846,
+              "final_hamming": 0.20791742956706633,
+              "changed_key_count": 19
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.24197477998936862,
+              "final_hamming": 0.20793219538125332,
+              "changed_key_count": 19
+            }
+          ]
+        },
+        {
+          "left_index": 25,
+          "right_index": 2,
+          "left_id": "posterior_seed_2_chain_0_sample_5",
+          "right_id": "ticket_seed_2",
+          "raw_record_hamming": 0.251336306183923,
+          "raw_record_jaccard_keep": 0.14434725782938723,
+          "raw_record_support_overlap_min": 0.25227876737903315,
+          "best_start": "identity",
+          "global_channel_hamming": 0.21385328687023802,
+          "global_channel_jaccard_keep": 0.2223370696019867,
+          "global_channel_support_overlap_min": 0.3637901117968767,
+          "hamming_improvement": 0.03748301931368497,
+          "changed_key_count": 19,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.251336306183923
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.22326649341444688,
+              "changed_keys": 19
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.2157359281790798,
+              "changed_keys": 18
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21411907152560392,
+              "changed_keys": 9
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.213927115941173,
+              "changed_keys": 7
+            },
+            {
+              "iteration": 5,
+              "hamming": 0.2138754355915185,
+              "changed_keys": 2
+            },
+            {
+              "iteration": 6,
+              "hamming": 0.21385328687023802,
+              "changed_keys": 2
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.251336306183923,
+              "final_hamming": 0.21385328687023802,
+              "changed_key_count": 19
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.24391648455495837,
+              "final_hamming": 0.213956647569547,
+              "changed_key_count": 19
+            }
+          ]
+        },
+        {
+          "left_index": 30,
+          "right_index": 3,
+          "left_id": "posterior_seed_3_chain_0_sample_0",
+          "right_id": "ticket_seed_3",
+          "raw_record_hamming": 0.2504134427972358,
+          "raw_record_jaccard_keep": 0.14614774629627297,
+          "raw_record_support_overlap_min": 0.25502427024533814,
+          "best_start": "identity",
+          "global_channel_hamming": 0.21037593762920087,
+          "global_channel_jaccard_keep": 0.23011455744083,
+          "global_channel_support_overlap_min": 0.37413516659711393,
+          "hamming_improvement": 0.04003750516803495,
+          "changed_key_count": 19,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.2504134427972358
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.22082275116649933,
+              "changed_keys": 19
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.2169910223849743,
+              "changed_keys": 12
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21516006142578703,
+              "changed_keys": 9
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.21373516035674206,
+              "changed_keys": 7
+            },
+            {
+              "iteration": 5,
+              "hamming": 0.21126926938751403,
+              "changed_keys": 8
+            },
+            {
+              "iteration": 6,
+              "hamming": 0.21037593762920087,
+              "changed_keys": 7
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.2504134427972358,
+              "final_hamming": 0.21037593762920087,
+              "changed_key_count": 19
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.24133246707223435,
+              "final_hamming": 0.21236193963735162,
+              "changed_key_count": 19
+            }
+          ]
+        },
+        {
+          "left_index": 43,
+          "right_index": 4,
+          "left_id": "posterior_seed_4_chain_0_sample_3",
+          "right_id": "ticket_seed_4",
+          "raw_record_hamming": 0.25135107199810997,
+          "raw_record_jaccard_keep": 0.1443184959911529,
+          "raw_record_support_overlap_min": 0.25223483933317226,
+          "best_start": "identity",
+          "global_channel_hamming": 0.21682859842891736,
+          "global_channel_jaccard_keep": 0.21576010040321503,
+          "global_channel_support_overlap_min": 0.3549386105559094,
+          "hamming_improvement": 0.03452247356919261,
+          "changed_key_count": 19,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.25135107199810997
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.22788081034788257,
+              "changed_keys": 19
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.22272754119662158,
+              "changed_keys": 17
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21966363475282027,
+              "changed_keys": 15
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.2180393951922509,
+              "changed_keys": 11
+            },
+            {
+              "iteration": 5,
+              "hamming": 0.21718297796940522,
+              "changed_keys": 8
+            },
+            {
+              "iteration": 6,
+              "hamming": 0.21682859842891736,
+              "changed_keys": 8
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.25135107199810997,
+              "final_hamming": 0.21682859842891736,
+              "changed_key_count": 19
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.246138739590101,
+              "final_hamming": 0.21685074715019786,
+              "changed_key_count": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "raw posterior modes vs tickets",
+      "left": "posterior_mode",
+      "right": "ticket",
+      "left_count": 1,
+      "right_count": 5,
+      "optimized_pair_count": 1,
+      "record_optimal_pair_count": 1,
+      "raw_record_hamming": {
+        "mean": 0.2079764928238143,
+        "min": 0.2079764928238143,
+        "max": 0.2079764928238143
+      },
+      "global_channel_hamming": {
+        "mean": 0.20753351839820447,
+        "min": 0.20753351839820447,
+        "max": 0.20753351839820447
+      },
+      "global_channel_support_overlap_min": {
+        "mean": 0.38260487590599607,
+        "min": 0.38260487590599607,
+        "max": 0.38260487590599607
+      },
+      "hamming_improvement": {
+        "mean": 0.0004429744256098378,
+        "min": 0.0004429744256098378,
+        "max": 0.0004429744256098378
+      },
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 1,
+          "left_id": "posterior_mode_0_sample_10",
+          "right_id": "ticket_seed_1",
+          "raw_record_hamming": 0.2079764928238143,
+          "raw_record_jaccard_keep": 0.2355495251017639,
+          "raw_record_support_overlap_min": 0.3812870634746321,
+          "best_start": "local_feature",
+          "global_channel_hamming": 0.20753351839820447,
+          "global_channel_jaccard_keep": 0.2365562194459533,
+          "global_channel_support_overlap_min": 0.38260487590599607,
+          "hamming_improvement": 0.0004429744256098378,
+          "changed_key_count": 5,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.20765164491170043
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.20754828421239147,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.20753351839820447,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.20753351839820447,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.2079764928238143,
+              "final_hamming": 0.20757043293367197,
+              "changed_key_count": 5
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.20765164491170043,
+              "final_hamming": 0.20753351839820447,
+              "changed_key_count": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "activation-aligned posterior modes vs tickets",
+      "left": "activation_aligned_posterior_mode",
+      "right": "activation_aligned_ticket",
+      "left_count": 1,
+      "right_count": 5,
+      "optimized_pair_count": 1,
+      "record_optimal_pair_count": 1,
+      "raw_record_hamming": {
+        "mean": 0.21690242749985233,
+        "min": 0.21690242749985233,
+        "max": 0.21690242749985233
+      },
+      "global_channel_hamming": {
+        "mean": 0.20744492351308252,
+        "min": 0.20744492351308252,
+        "max": 0.20744492351308252
+      },
+      "global_channel_support_overlap_min": {
+        "mean": 0.3828548837004986,
+        "min": 0.3828548837004986,
+        "max": 0.3828548837004986
+      },
+      "hamming_improvement": {
+        "mean": 0.00945750398676981,
+        "min": 0.00945750398676981,
+        "max": 0.00945750398676981
+      },
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "activation_aligned_posterior_mode_0_sample_0",
+          "right_id": "ticket_seed_0",
+          "raw_record_hamming": 0.21690242749985233,
+          "raw_record_jaccard_keep": 0.2155977999679607,
+          "raw_record_support_overlap_min": 0.35471897032660504,
+          "best_start": "local_feature",
+          "global_channel_hamming": 0.20744492351308252,
+          "global_channel_jaccard_keep": 0.2367473888654977,
+          "global_channel_support_overlap_min": 0.3828548837004986,
+          "hamming_improvement": 0.00945750398676981,
+          "changed_key_count": 14,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.2084859134132656
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.207511369676924,
+              "changed_keys": 8
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.20744492351308252,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.20744492351308252,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.21690242749985233,
+              "final_hamming": 0.2074744551414565,
+              "changed_key_count": 14
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.2084859134132656,
+              "final_hamming": 0.20744492351308252,
+              "changed_key_count": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "raw chain starts vs tickets",
+      "left": "chain_start",
+      "right": "ticket",
+      "left_count": 5,
+      "right_count": 5,
+      "optimized_pair_count": 5,
+      "record_optimal_pair_count": 5,
+      "raw_record_hamming": {
+        "mean": 0.20998169039040815,
+        "min": 0.20655897466186285,
+        "max": 0.21517482723997403
+      },
+      "global_channel_hamming": {
+        "mean": 0.20916366428444863,
+        "min": 0.20613076605044003,
+        "max": 0.21405262536176245
+      },
+      "global_channel_support_overlap_min": {
+        "mean": 0.37774435292693187,
+        "min": 0.36319708317775484,
+        "max": 0.38677794860531517
+      },
+      "hamming_improvement": {
+        "mean": 0.0008180261059594851,
+        "min": 0.0004282086114228145,
+        "max": 0.0012034138562400376
+      },
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0",
+          "raw_record_hamming": 0.20712745850806213,
+          "raw_record_jaccard_keep": 0.2374701021961296,
+          "raw_record_support_overlap_min": 0.3837993366865075,
+          "best_start": "identity",
+          "global_channel_hamming": 0.20638916779871241,
+          "global_channel_jaccard_keep": 0.23915410157313158,
+          "global_channel_support_overlap_min": 0.3859957389795515,
+          "hamming_improvement": 0.0007382907093497204,
+          "changed_key_count": 8,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.20712745850806213
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.20642608233417992,
+              "changed_keys": 8
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.2064039336128994,
+              "changed_keys": 6
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.20638916779871241,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.20638916779871241,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.20712745850806213,
+              "final_hamming": 0.20638916779871241,
+              "changed_key_count": 8
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.20651467721930186,
+              "final_hamming": 0.20639655070580593,
+              "changed_key_count": 8
+            }
+          ]
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1",
+          "raw_record_hamming": 0.20655897466186285,
+          "raw_record_jaccard_keep": 0.2387767317842956,
+          "raw_record_support_overlap_min": 0.3855040632549967,
+          "best_start": "identity",
+          "global_channel_hamming": 0.20613076605044003,
+          "global_channel_jaccard_keep": 0.23975493533015657,
+          "global_channel_support_overlap_min": 0.38677794860531517,
+          "hamming_improvement": 0.0004282086114228145,
+          "changed_key_count": 5,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.20655897466186285
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.206145531864627,
+              "changed_keys": 5
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.20613076605044003,
+              "changed_keys": 4
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.20613076605044003,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.20655897466186285,
+              "final_hamming": 0.20613076605044003,
+              "changed_key_count": 5
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.2061529147717205,
+              "final_hamming": 0.20613076605044003,
+              "changed_key_count": 5
+            }
+          ]
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "chain_start_seed_2_chain_0",
+          "right_id": "ticket_seed_2",
+          "raw_record_hamming": 0.21171224381312387,
+          "raw_record_jaccard_keep": 0.22711407587089819,
+          "raw_record_support_overlap_min": 0.3701596784467043,
+          "best_start": "identity",
+          "global_channel_hamming": 0.21050882995688383,
+          "global_channel_jaccard_keep": 0.22981551011588017,
+          "global_channel_support_overlap_min": 0.373739814184366,
+          "hamming_improvement": 0.0012034138562400376,
+          "changed_key_count": 9,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.21171224381312387
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.21052359577107083,
+              "changed_keys": 9
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.21050882995688383,
+              "changed_keys": 2
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21050882995688383,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.21171224381312387,
+              "final_hamming": 0.21050882995688383,
+              "changed_key_count": 9
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.21062695647037977,
+              "final_hamming": 0.21050882995688383,
+              "changed_key_count": 9
+            }
+          ]
+        },
+        {
+          "left_index": 3,
+          "right_index": 3,
+          "left_id": "chain_start_seed_3_chain_0",
+          "right_id": "ticket_seed_3",
+          "raw_record_hamming": 0.20933494772901778,
+          "raw_record_jaccard_keep": 0.2324621360800184,
+          "raw_record_support_overlap_min": 0.377232093830306,
+          "best_start": "local_feature",
+          "global_channel_hamming": 0.2087369322544445,
+          "global_channel_jaccard_keep": 0.2338148017668898,
+          "global_channel_support_overlap_min": 0.3790111796876716,
+          "hamming_improvement": 0.0005980154745732769,
+          "changed_key_count": 6,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.20886244167503396
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.20875908097572501,
+              "changed_keys": 5
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.2087369322544445,
+              "changed_keys": 1
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.2087369322544445,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.20933494772901778,
+              "final_hamming": 0.20877384678991198,
+              "changed_key_count": 6
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.20886244167503396,
+              "final_hamming": 0.2087369322544445,
+              "changed_key_count": 6
+            }
+          ]
+        },
+        {
+          "left_index": 4,
+          "right_index": 4,
+          "left_id": "chain_start_seed_4_chain_0",
+          "right_id": "ticket_seed_4",
+          "raw_record_hamming": 0.21517482723997403,
+          "raw_record_jaccard_keep": 0.21940702252457348,
+          "raw_record_support_overlap_min": 0.35985855169232794,
+          "best_start": "local_feature",
+          "global_channel_hamming": 0.21405262536176245,
+          "global_channel_jaccard_keep": 0.2218942057379029,
+          "global_channel_support_overlap_min": 0.36319708317775484,
+          "hamming_improvement": 0.0011222018782115761,
+          "changed_key_count": 8,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.21454728013702676
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.2142076664107259,
+              "changed_keys": 6
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.21408953989722992,
+              "changed_keys": 5
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21408215699013644,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.21405262536176245,
+              "changed_keys": 2
+            },
+            {
+              "iteration": 5,
+              "hamming": 0.21405262536176245,
+              "changed_keys": 1
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.21517482723997403,
+              "final_hamming": 0.21408215699013644,
+              "changed_key_count": 8
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.21454728013702676,
+              "final_hamming": 0.21405262536176245,
+              "changed_key_count": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "activation-aligned chain starts vs tickets",
+      "left": "activation_aligned_chain_start",
+      "right": "activation_aligned_ticket",
+      "left_count": 5,
+      "right_count": 5,
+      "optimized_pair_count": 5,
+      "record_optimal_pair_count": 5,
+      "raw_record_hamming": {
+        "mean": 0.2430822160533932,
+        "min": 0.21596479829897822,
+        "max": 0.25113696769239857
+      },
+      "global_channel_hamming": {
+        "mean": 0.2092685015651763,
+        "min": 0.20610861732915953,
+        "max": 0.21453251432283976
+      },
+      "global_channel_support_overlap_min": {
+        "mean": 0.3774324635118749,
+        "min": 0.3617694216872762,
+        "max": 0.38684383922688337
+      },
+      "hamming_improvement": {
+        "mean": 0.033813714488216885,
+        "min": 0.009568247593172291,
+        "max": 0.0417577225208198
+      },
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0",
+          "raw_record_hamming": 0.21596479829897822,
+          "raw_record_jaccard_keep": 0.21766224040865995,
+          "raw_record_support_overlap_min": 0.35750840123877087,
+          "best_start": "identity",
+          "global_channel_hamming": 0.20639655070580593,
+          "global_channel_jaccard_keep": 0.23913723889229094,
+          "global_channel_support_overlap_min": 0.38597377495662105,
+          "hamming_improvement": 0.009568247593172291,
+          "changed_key_count": 13,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.21596479829897822
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.20657374047604984,
+              "changed_keys": 14
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.20639655070580593,
+              "changed_keys": 7
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.20639655070580593,
+              "changed_keys": 0
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.21596479829897822,
+              "final_hamming": 0.20639655070580593,
+              "changed_key_count": 13
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.20708316106550115,
+              "final_hamming": 0.20642608233417992,
+              "changed_key_count": 13
+            }
+          ]
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1",
+          "raw_record_hamming": 0.24746766286693048,
+          "raw_record_jaccard_keep": 0.15194373110349277,
+          "raw_record_support_overlap_min": 0.2638040852185372,
+          "best_start": "identity",
+          "global_channel_hamming": 0.20610861732915953,
+          "global_channel_jaccard_keep": 0.2398055740874372,
+          "global_channel_support_overlap_min": 0.38684383922688337,
+          "hamming_improvement": 0.04135904553777095,
+          "changed_key_count": 19,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.24746766286693048
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.21152028822869293,
+              "changed_keys": 19
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.20637440198452542,
+              "changed_keys": 14
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.2061824464000945,
+              "changed_keys": 5
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.206145531864627,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 5,
+              "hamming": 0.20610861732915953,
+              "changed_keys": 4
+            },
+            {
+              "iteration": 6,
+              "hamming": 0.20610861732915953,
+              "changed_keys": 2
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.24746766286693048,
+              "final_hamming": 0.20610861732915953,
+              "changed_key_count": 19
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.23875583249660387,
+              "final_hamming": 0.2062415096568425,
+              "changed_key_count": 19
+            }
+          ]
+        },
+        {
+          "left_index": 2,
+          "right_index": 2,
+          "left_id": "chain_start_seed_2_chain_0",
+          "right_id": "ticket_seed_2",
+          "raw_record_hamming": 0.2503100820979269,
+          "raw_record_jaccard_keep": 0.14634975388062896,
+          "raw_record_support_overlap_min": 0.2553317665663643,
+          "best_start": "local_feature",
+          "global_channel_hamming": 0.2105309786781643,
+          "global_channel_jaccard_keep": 0.2297656830305895,
+          "global_channel_support_overlap_min": 0.3736739221155747,
+          "hamming_improvement": 0.03977910341976257,
+          "changed_key_count": 19,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.24218888429508004
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.21720512669068573,
+              "changed_keys": 19
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.21296733801901838,
+              "changed_keys": 14
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21182298741952632,
+              "changed_keys": 7
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.21116590868820506,
+              "changed_keys": 5
+            },
+            {
+              "iteration": 5,
+              "hamming": 0.21065648809875376,
+              "changed_keys": 6
+            },
+            {
+              "iteration": 6,
+              "hamming": 0.2105309786781643,
+              "changed_keys": 6
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.2503100820979269,
+              "final_hamming": 0.2105678932136318,
+              "changed_key_count": 19
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.24218888429508004,
+              "final_hamming": 0.2105309786781643,
+              "changed_key_count": 19
+            }
+          ]
+        },
+        {
+          "left_index": 3,
+          "right_index": 3,
+          "left_id": "chain_start_seed_3_chain_0",
+          "right_id": "ticket_seed_3",
+          "raw_record_hamming": 0.2505315693107318,
+          "raw_record_jaccard_keep": 0.1459169676453192,
+          "raw_record_support_overlap_min": 0.25467284587845107,
+          "best_start": "local_feature",
+          "global_channel_hamming": 0.20877384678991198,
+          "global_channel_jaccard_keep": 0.23373121790616067,
+          "global_channel_support_overlap_min": 0.3789013595730194,
+          "hamming_improvement": 0.0417577225208198,
+          "changed_key_count": 19,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.24169422951981573
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.21871862264485264,
+              "changed_keys": 18
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.2146875553718032,
+              "changed_keys": 11
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.2108410607760912,
+              "changed_keys": 8
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.20909131179493237,
+              "changed_keys": 8
+            },
+            {
+              "iteration": 5,
+              "hamming": 0.2087959955111925,
+              "changed_keys": 3
+            },
+            {
+              "iteration": 6,
+              "hamming": 0.20877384678991198,
+              "changed_keys": 2
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.2505315693107318,
+              "final_hamming": 0.2090248656310909,
+              "changed_key_count": 19
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.24169422951981573,
+              "final_hamming": 0.20877384678991198,
+              "changed_key_count": 19
+            }
+          ]
+        },
+        {
+          "left_index": 4,
+          "right_index": 4,
+          "left_id": "chain_start_seed_4_chain_0",
+          "right_id": "ticket_seed_4",
+          "raw_record_hamming": 0.25113696769239857,
+          "raw_record_jaccard_keep": 0.14473568420390973,
+          "raw_record_support_overlap_min": 0.252871795998155,
+          "best_start": "identity",
+          "global_channel_hamming": 0.21453251432283976,
+          "global_channel_jaccard_keep": 0.22082936704787698,
+          "global_channel_support_overlap_min": 0.3617694216872762,
+          "hamming_improvement": 0.03660445336955881,
+          "changed_key_count": 19,
+          "trace": [
+            {
+              "iteration": 0,
+              "hamming": 0.25113696769239857
+            },
+            {
+              "iteration": 1,
+              "hamming": 0.22788819325497608,
+              "changed_keys": 19
+            },
+            {
+              "iteration": 2,
+              "hamming": 0.22284566771011755,
+              "changed_keys": 16
+            },
+            {
+              "iteration": 3,
+              "hamming": 0.21925019195558443,
+              "changed_keys": 15
+            },
+            {
+              "iteration": 4,
+              "hamming": 0.21662925993739296,
+              "changed_keys": 14
+            },
+            {
+              "iteration": 5,
+              "hamming": 0.21534463410312443,
+              "changed_keys": 12
+            },
+            {
+              "iteration": 6,
+              "hamming": 0.21453251432283976,
+              "changed_keys": 9
+            }
+          ],
+          "start_summaries": [
+            {
+              "start": "identity",
+              "initial_hamming": 0.25113696769239857,
+              "final_hamming": 0.21453251432283976,
+              "changed_key_count": 19
+            },
+            {
+              "start": "local_feature",
+              "initial_hamming": 0.2450903667828244,
+              "final_hamming": 0.21457681176540075,
+              "changed_key_count": 19
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

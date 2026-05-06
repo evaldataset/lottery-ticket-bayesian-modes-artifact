@@ -1,0 +1,287 @@
+{
+  "date": "2026-05-07",
+  "overall": {
+    "fake_artifact_path": "runs/fake_cifar10_mode_ticket_mask_artifact_smoke/20260506_225421/mask_artifacts.npz",
+    "full_artifact_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_aligned_saved_artifacts_r5_p0p3/20260506_230706/mask_artifacts.npz",
+    "stage1_parameter_count": 270,
+    "stage1_tensor_count": 7,
+    "stage1_exact_enumeration_supported": true,
+    "stage1_exact_permutation_count": 128,
+    "stage1_coordinate_descent_all_exact": true,
+    "full_exhaustive_channel_permutation_supported": false,
+    "full_log10_permutation_count": 840.3858690229547,
+    "limitation_statement": "Exact global channel-permutation enumeration is run only on a 270-parameter fake-CIFAR stage-1 subgraph with 128 assignments. The full CIFAR ResNet-20 artifact has about 10^840 channel assignments per record pair, so exhaustive graph/channel search remains infeasible and unimplemented for the full-data claim."
+  },
+  "search_spaces": {
+    "fake_full_artifact": {
+      "channel_key_count": 19,
+      "channel_count_histogram": {
+        "2": 7,
+        "4": 6,
+        "8": 6
+      },
+      "log10_permutation_count": 38.02160056054231,
+      "exact_permutation_count": null
+    },
+    "fake_stage1_subgraph": {
+      "channel_key_count": 7,
+      "channel_count_histogram": {
+        "2": 7
+      },
+      "log10_permutation_count": 2.107209969647867,
+      "exact_permutation_count": 128
+    },
+    "full_cifar_artifact": {
+      "channel_key_count": 19,
+      "channel_count_histogram": {
+        "16": 7,
+        "32": 6,
+        "64": 6
+      },
+      "log10_permutation_count": 840.3858690229547,
+      "exact_permutation_count": null
+    }
+  },
+  "exact_stage1_comparisons": [
+    {
+      "label": "ticket raw-vs-aligned frame",
+      "left": "ticket",
+      "right": "activation_aligned_ticket",
+      "pair_count": 2,
+      "raw_record_hamming": {
+        "mean": 0.07037037037037037,
+        "min": 0.0,
+        "max": 0.14074074074074075
+      },
+      "exact_global_hamming": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "coordinate_descent_hamming": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "exact_support_overlap_min": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "exact_improvement": {
+        "mean": 0.07037037037037037,
+        "min": 0.0,
+        "max": 0.14074074074074075
+      },
+      "coordinate_descent_matches_exact": true,
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "raw_record_hamming": 0.0,
+          "exact_global_hamming": 0.0,
+          "coordinate_descent_hamming": 0.0,
+          "exact_support_overlap_min": 1.0,
+          "exact_jaccard_keep": 1.0,
+          "exact_improvement": 0.0,
+          "coordinate_matches_exact": true,
+          "exact_changed_key_count": 0,
+          "coordinate_best_start": "identity"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "raw_record_hamming": 0.14074074074074075,
+          "exact_global_hamming": 0.0,
+          "coordinate_descent_hamming": 0.0,
+          "exact_support_overlap_min": 1.0,
+          "exact_jaccard_keep": 1.0,
+          "exact_improvement": 0.14074074074074075,
+          "coordinate_matches_exact": true,
+          "exact_changed_key_count": 2,
+          "coordinate_best_start": "identity"
+        }
+      ]
+    },
+    {
+      "label": "chain-start raw-vs-aligned frame",
+      "left": "chain_start",
+      "right": "activation_aligned_chain_start",
+      "pair_count": 2,
+      "raw_record_hamming": {
+        "mean": 0.025925925925925925,
+        "min": 0.0,
+        "max": 0.05185185185185185
+      },
+      "exact_global_hamming": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "coordinate_descent_hamming": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "exact_support_overlap_min": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "exact_improvement": {
+        "mean": 0.025925925925925925,
+        "min": 0.0,
+        "max": 0.05185185185185185
+      },
+      "coordinate_descent_matches_exact": true,
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "raw_record_hamming": 0.0,
+          "exact_global_hamming": 0.0,
+          "coordinate_descent_hamming": 0.0,
+          "exact_support_overlap_min": 1.0,
+          "exact_jaccard_keep": 1.0,
+          "exact_improvement": 0.0,
+          "coordinate_matches_exact": true,
+          "exact_changed_key_count": 0,
+          "coordinate_best_start": "identity"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "raw_record_hamming": 0.05185185185185185,
+          "exact_global_hamming": 0.0,
+          "coordinate_descent_hamming": 0.0,
+          "exact_support_overlap_min": 1.0,
+          "exact_jaccard_keep": 1.0,
+          "exact_improvement": 0.05185185185185185,
+          "coordinate_matches_exact": true,
+          "exact_changed_key_count": 1,
+          "coordinate_best_start": "identity"
+        }
+      ]
+    },
+    {
+      "label": "posterior samples vs tickets",
+      "left": "posterior_sample",
+      "right": "ticket",
+      "pair_count": 2,
+      "raw_record_hamming": {
+        "mean": 0.009259259259259259,
+        "min": 0.007407407407407408,
+        "max": 0.011111111111111112
+      },
+      "exact_global_hamming": {
+        "mean": 0.009259259259259259,
+        "min": 0.007407407407407408,
+        "max": 0.011111111111111112
+      },
+      "coordinate_descent_hamming": {
+        "mean": 0.009259259259259259,
+        "min": 0.007407407407407408,
+        "max": 0.011111111111111112
+      },
+      "exact_support_overlap_min": {
+        "mean": 0.9955342902711324,
+        "min": 0.9954545454545455,
+        "max": 0.9956140350877193
+      },
+      "exact_improvement": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "coordinate_descent_matches_exact": true,
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "raw_record_hamming": 0.011111111111111112,
+          "exact_global_hamming": 0.011111111111111112,
+          "coordinate_descent_hamming": 0.011111111111111112,
+          "exact_support_overlap_min": 0.9954545454545455,
+          "exact_jaccard_keep": 0.9864864864864865,
+          "exact_improvement": 0.0,
+          "coordinate_matches_exact": true,
+          "exact_changed_key_count": 0,
+          "coordinate_best_start": "identity"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "raw_record_hamming": 0.007407407407407408,
+          "exact_global_hamming": 0.007407407407407408,
+          "coordinate_descent_hamming": 0.007407407407407408,
+          "exact_support_overlap_min": 0.9956140350877193,
+          "exact_jaccard_keep": 0.9912663755458515,
+          "exact_improvement": 0.0,
+          "coordinate_matches_exact": true,
+          "exact_changed_key_count": 0,
+          "coordinate_best_start": "identity"
+        }
+      ]
+    },
+    {
+      "label": "activation-aligned posterior samples vs tickets",
+      "left": "activation_aligned_posterior_sample",
+      "right": "activation_aligned_ticket",
+      "pair_count": 2,
+      "raw_record_hamming": {
+        "mean": 0.053703703703703705,
+        "min": 0.011111111111111112,
+        "max": 0.0962962962962963
+      },
+      "exact_global_hamming": {
+        "mean": 0.009259259259259259,
+        "min": 0.007407407407407408,
+        "max": 0.011111111111111112
+      },
+      "coordinate_descent_hamming": {
+        "mean": 0.009259259259259259,
+        "min": 0.007407407407407408,
+        "max": 0.011111111111111112
+      },
+      "exact_support_overlap_min": {
+        "mean": 0.9955342902711324,
+        "min": 0.9954545454545455,
+        "max": 0.9956140350877193
+      },
+      "exact_improvement": {
+        "mean": 0.044444444444444446,
+        "min": 0.0,
+        "max": 0.08888888888888889
+      },
+      "coordinate_descent_matches_exact": true,
+      "pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "raw_record_hamming": 0.011111111111111112,
+          "exact_global_hamming": 0.011111111111111112,
+          "coordinate_descent_hamming": 0.011111111111111112,
+          "exact_support_overlap_min": 0.9954545454545455,
+          "exact_jaccard_keep": 0.9864864864864865,
+          "exact_improvement": 0.0,
+          "coordinate_matches_exact": true,
+          "exact_changed_key_count": 0,
+          "coordinate_best_start": "identity"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "raw_record_hamming": 0.0962962962962963,
+          "exact_global_hamming": 0.007407407407407408,
+          "coordinate_descent_hamming": 0.007407407407407408,
+          "exact_support_overlap_min": 0.9956140350877193,
+          "exact_jaccard_keep": 0.9912663755458515,
+          "exact_improvement": 0.08888888888888889,
+          "coordinate_matches_exact": true,
+          "exact_changed_key_count": 1,
+          "coordinate_best_start": "identity"
+        }
+      ]
+    }
+  ]
+}
