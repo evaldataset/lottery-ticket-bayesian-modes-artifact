@@ -1,0 +1,535 @@
+{
+  "date": "2026-05-06",
+  "runs": [
+    {
+      "label": "CIFAR SGLD direct",
+      "run_root": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_r5_p0p3",
+      "exists": true,
+      "run_dir": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_r5_p0p3/20260506_004811",
+      "metrics_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_r5_p0p3/20260506_004811/metrics.json",
+      "summary_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_r5_p0p3_summary.csv",
+      "summary_exists": true,
+      "dataset": "cifar10",
+      "model": "resnet20",
+      "posterior_sampler": "sgld",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "samples_per_seed": 10,
+      "posterior_chains": null,
+      "alignment": {
+        "method": "none",
+        "target": null,
+        "target_seed": null,
+        "target_frame_count": 0,
+        "target_frame_fraction": 0.0,
+        "record_count": 0,
+        "source_counts": {},
+        "by_source": {}
+      },
+      "direct_sample_row": {
+        "comparison": "posterior_samples_vs_tickets",
+        "left_count": 50.0,
+        "right_count": 5.0,
+        "posterior_num_clusters": 1.0,
+        "posterior_effective_cluster_count": 1.0,
+        "layer_ks_pvalue": 5.336723934316886e-09,
+        "hamming_overlap": 0.0032653061224489797,
+        "hamming_cross_mean": 0.2489411139330223,
+        "logit_cka_hungarian_mean": 0.9368911913931057,
+        "activation_cka_hungarian_mean": 0.9171704375877153,
+        "passes_layer_ks": false,
+        "passes_hamming_overlap": false,
+        "passes_logit_cka": true,
+        "passes_activation_cka": true,
+        "mask_distribution_pass": false,
+        "basin_count_matches_tickets": false,
+        "direct_equivalence_pass": false
+      },
+      "file_inventory": {
+        "file_count": 4,
+        "suffix_counts": {
+          ".csv": 3,
+          ".json": 1
+        },
+        "raw_mask_or_state_files": [],
+        "raw_mask_or_state_file_count": 0
+      },
+      "missing": false
+    },
+    {
+      "label": "CIFAR activation-aligned SGLD",
+      "run_root": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_aligned_r5_p0p3",
+      "exists": true,
+      "run_dir": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_aligned_r5_p0p3/20260506_005822",
+      "metrics_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_aligned_r5_p0p3/20260506_005822/metrics.json",
+      "summary_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_activation_aligned_r5_p0p3_summary.csv",
+      "summary_exists": true,
+      "dataset": "cifar10",
+      "model": "resnet20",
+      "posterior_sampler": "sgld",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "samples_per_seed": 10,
+      "posterior_chains": null,
+      "alignment": {
+        "method": "activation",
+        "target": "first_seed_dense_model",
+        "target_seed": 0,
+        "target_frame_count": 1,
+        "target_frame_fraction": 0.2,
+        "record_count": 55,
+        "source_counts": {
+          "posterior_sample": 50,
+          "ticket": 5
+        },
+        "by_source": {
+          "posterior_sample": {
+            "record_count": 50,
+            "seed_count": 5,
+            "seeds": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "mean_corr_mean": 0.6717383813858032,
+            "mean_corr_min": 0.5890400409698486,
+            "mean_corr_max": 0.9897679090499878,
+            "min_corr_mean": 0.1878952241037041,
+            "min_corr_min": -0.11075595766305923
+          },
+          "ticket": {
+            "record_count": 5,
+            "seed_count": 5,
+            "seeds": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "mean_corr_mean": 0.6161169290542603,
+            "mean_corr_min": 0.5882477164268494,
+            "mean_corr_max": 0.7128181457519531,
+            "min_corr_mean": -0.057129768282175065,
+            "min_corr_min": -0.14413456618785858
+          }
+        }
+      },
+      "direct_sample_row": {
+        "comparison": "activation_aligned_posterior_samples_vs_tickets",
+        "left_count": 50.0,
+        "right_count": 5.0,
+        "posterior_num_clusters": 1.0,
+        "posterior_effective_cluster_count": 1.0,
+        "layer_ks_pvalue": 2.319489814193671e-09,
+        "hamming_overlap": 0.0,
+        "hamming_cross_mean": 0.25275801783710355,
+        "logit_cka_hungarian_mean": 0.937284760834898,
+        "activation_cka_hungarian_mean": 0.9168321107568673,
+        "passes_layer_ks": false,
+        "passes_hamming_overlap": false,
+        "passes_logit_cka": true,
+        "passes_activation_cka": true,
+        "mask_distribution_pass": false,
+        "basin_count_matches_tickets": false,
+        "direct_equivalence_pass": false
+      },
+      "file_inventory": {
+        "file_count": 6,
+        "suffix_counts": {
+          ".csv": 3,
+          ".json": 3
+        },
+        "raw_mask_or_state_files": [],
+        "raw_mask_or_state_file_count": 0
+      },
+      "missing": false
+    },
+    {
+      "label": "CIFAR weight-aligned SGLD",
+      "run_root": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_weight_aligned_r5_p0p3",
+      "exists": true,
+      "run_dir": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_weight_aligned_r5_p0p3/20260506_091445",
+      "metrics_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_weight_aligned_r5_p0p3/20260506_091445/metrics.json",
+      "summary_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_weight_aligned_r5_p0p3_summary.csv",
+      "summary_exists": true,
+      "dataset": "cifar10",
+      "model": "resnet20",
+      "posterior_sampler": "sgld",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "samples_per_seed": 10,
+      "posterior_chains": 1,
+      "alignment": {
+        "method": "weight",
+        "target": "first_seed_dense_model",
+        "target_seed": 0,
+        "target_frame_count": 1,
+        "target_frame_fraction": 0.2,
+        "record_count": 60,
+        "source_counts": {
+          "chain_start": 5,
+          "posterior_sample": 50,
+          "ticket": 5
+        },
+        "by_source": {
+          "chain_start": {
+            "record_count": 5,
+            "seed_count": 5,
+            "seeds": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "mean_corr_mean": 0.32452639043331144,
+            "mean_corr_min": 0.15486232936382294,
+            "mean_corr_max": 1.0,
+            "min_corr_mean": 0.18869643099606037,
+            "min_corr_min": -0.05752107873558998
+          },
+          "posterior_sample": {
+            "record_count": 50,
+            "seed_count": 5,
+            "seeds": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "mean_corr_mean": 0.3150831666588783,
+            "mean_corr_min": 0.15032415091991425,
+            "mean_corr_max": 0.9807405471801758,
+            "min_corr_mean": 0.16139909867197275,
+            "min_corr_min": -0.06575260311365128
+          },
+          "ticket": {
+            "record_count": 5,
+            "seed_count": 5,
+            "seeds": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "mean_corr_mean": 0.20874587297439576,
+            "mean_corr_min": 0.146656334400177,
+            "mean_corr_max": 0.4463098347187042,
+            "min_corr_mean": 0.01632637921720743,
+            "min_corr_min": -0.017424222081899643
+          }
+        }
+      },
+      "direct_sample_row": {
+        "comparison": "weight_aligned_posterior_samples_vs_tickets",
+        "left_count": 50.0,
+        "right_count": 5.0,
+        "posterior_num_clusters": 1.0,
+        "posterior_effective_cluster_count": 1.0,
+        "layer_ks_pvalue": 1.2055984436281608e-08,
+        "hamming_overlap": 0.12897959183673469,
+        "hamming_cross_mean": 0.2560336217589038,
+        "logit_cka_hungarian_mean": 0.9335899206663054,
+        "activation_cka_hungarian_mean": 0.9130925765931062,
+        "passes_layer_ks": false,
+        "passes_hamming_overlap": false,
+        "passes_logit_cka": true,
+        "passes_activation_cka": true,
+        "mask_distribution_pass": false,
+        "basin_count_matches_tickets": false,
+        "direct_equivalence_pass": false
+      },
+      "file_inventory": {
+        "file_count": 6,
+        "suffix_counts": {
+          ".csv": 3,
+          ".json": 3
+        },
+        "raw_mask_or_state_files": [],
+        "raw_mask_or_state_file_count": 0
+      },
+      "missing": false
+    },
+    {
+      "label": "CIFAR dense-start cSGLD multi-chain",
+      "run_root": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_csgld_multichain_r5_p0p3",
+      "exists": true,
+      "run_dir": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_csgld_multichain_r5_p0p3/20260506_014145",
+      "metrics_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_csgld_multichain_r5_p0p3/20260506_014145/metrics.json",
+      "summary_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_csgld_multichain_r5_p0p3_summary.csv",
+      "summary_exists": true,
+      "dataset": "cifar10",
+      "model": "resnet20",
+      "posterior_sampler": "cyclical-sgld",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "samples_per_seed": 15,
+      "posterior_chains": 3,
+      "alignment": {
+        "method": "none",
+        "target": null,
+        "target_seed": null,
+        "target_frame_count": 0,
+        "target_frame_fraction": 0.0,
+        "record_count": 0,
+        "source_counts": {},
+        "by_source": {}
+      },
+      "direct_sample_row": {
+        "comparison": "posterior_samples_vs_tickets",
+        "left_count": 75.0,
+        "right_count": 5.0,
+        "posterior_num_clusters": 1.0,
+        "posterior_effective_cluster_count": 1.0,
+        "layer_ks_pvalue": 3.331308133038836e-08,
+        "hamming_overlap": 0.24612612612612614,
+        "hamming_cross_mean": 0.24896784990057685,
+        "logit_cka_hungarian_mean": 0.9326848408048019,
+        "activation_cka_hungarian_mean": 0.914372302310068,
+        "passes_layer_ks": false,
+        "passes_hamming_overlap": false,
+        "passes_logit_cka": true,
+        "passes_activation_cka": true,
+        "mask_distribution_pass": false,
+        "basin_count_matches_tickets": false,
+        "direct_equivalence_pass": false
+      },
+      "file_inventory": {
+        "file_count": 6,
+        "suffix_counts": {
+          ".csv": 3,
+          ".json": 3
+        },
+        "raw_mask_or_state_files": [],
+        "raw_mask_or_state_file_count": 0
+      },
+      "missing": false
+    },
+    {
+      "label": "CIFAR independent-start cSGLD multi-chain",
+      "run_root": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_csgld_independent_multichain_r5_p0p3",
+      "exists": true,
+      "run_dir": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_csgld_independent_multichain_r5_p0p3/20260506_125221",
+      "metrics_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_csgld_independent_multichain_r5_p0p3/20260506_125221/metrics.json",
+      "summary_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_csgld_independent_multichain_r5_p0p3_summary.csv",
+      "summary_exists": true,
+      "dataset": "cifar10",
+      "model": "resnet20",
+      "posterior_sampler": "cyclical-sgld",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "samples_per_seed": 15,
+      "posterior_chains": 3,
+      "alignment": {
+        "method": "none",
+        "target": null,
+        "target_seed": null,
+        "target_frame_count": 0,
+        "target_frame_fraction": 0.0,
+        "record_count": 0,
+        "source_counts": {},
+        "by_source": {}
+      },
+      "direct_sample_row": {
+        "comparison": "posterior_samples_vs_tickets",
+        "left_count": 75.0,
+        "right_count": 5.0,
+        "posterior_num_clusters": 1.0,
+        "posterior_effective_cluster_count": 1.0,
+        "layer_ks_pvalue": 9.302516737358442e-10,
+        "hamming_overlap": 0.0,
+        "hamming_cross_mean": 0.25630885161341127,
+        "logit_cka_hungarian_mean": 0.9268782240350735,
+        "activation_cka_hungarian_mean": 0.9051064456304199,
+        "passes_layer_ks": false,
+        "passes_hamming_overlap": false,
+        "passes_logit_cka": true,
+        "passes_activation_cka": true,
+        "mask_distribution_pass": false,
+        "basin_count_matches_tickets": false,
+        "direct_equivalence_pass": false
+      },
+      "file_inventory": {
+        "file_count": 6,
+        "suffix_counts": {
+          ".csv": 3,
+          ".json": 3
+        },
+        "raw_mask_or_state_files": [],
+        "raw_mask_or_state_file_count": 0
+      },
+      "missing": false
+    },
+    {
+      "label": "CIFAR LowRank128 Laplace direct",
+      "run_root": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_lowrank128_laplace_r5_p0p3",
+      "exists": true,
+      "run_dir": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_lowrank128_laplace_r5_p0p3/20260506_120015",
+      "metrics_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_lowrank128_laplace_r5_p0p3/20260506_120015/metrics.json",
+      "summary_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_lowrank128_laplace_r5_p0p3_summary.csv",
+      "summary_exists": true,
+      "dataset": "cifar10",
+      "model": "resnet20",
+      "posterior_sampler": "lowrank-laplace",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "samples_per_seed": 10,
+      "posterior_chains": 1,
+      "alignment": {
+        "method": "none",
+        "target": null,
+        "target_seed": null,
+        "target_frame_count": 0,
+        "target_frame_fraction": 0.0,
+        "record_count": 0,
+        "source_counts": {},
+        "by_source": {}
+      },
+      "direct_sample_row": {
+        "comparison": "posterior_samples_vs_tickets",
+        "left_count": 50.0,
+        "right_count": 5.0,
+        "posterior_num_clusters": 1.0,
+        "posterior_effective_cluster_count": 1.0,
+        "layer_ks_pvalue": 1.9819986687371347e-06,
+        "hamming_overlap": 0.8163265306122449,
+        "hamming_cross_mean": 0.2524386923394956,
+        "logit_cka_hungarian_mean": 0.9319135075776661,
+        "activation_cka_hungarian_mean": 0.909552069775731,
+        "passes_layer_ks": false,
+        "passes_hamming_overlap": true,
+        "passes_logit_cka": true,
+        "passes_activation_cka": true,
+        "mask_distribution_pass": false,
+        "basin_count_matches_tickets": false,
+        "direct_equivalence_pass": false
+      },
+      "file_inventory": {
+        "file_count": 6,
+        "suffix_counts": {
+          ".csv": 3,
+          ".json": 3
+        },
+        "raw_mask_or_state_files": [],
+        "raw_mask_or_state_file_count": 0
+      },
+      "missing": false
+    },
+    {
+      "label": "CIFAR JointDiagLap270k direct",
+      "run_root": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_jointdiag_laplace_max40k_stream_r5_p0p3",
+      "exists": true,
+      "run_dir": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_jointdiag_laplace_max40k_stream_r5_p0p3/20260506_211131",
+      "metrics_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_jointdiag_laplace_max40k_stream_r5_p0p3/20260506_211131/metrics.json",
+      "summary_path": "runs/cifar10_resnet20_long30_rewind1_mode_ticket_distribution_jointdiag_laplace_max40k_stream_r5_p0p3_summary.csv",
+      "summary_exists": true,
+      "dataset": "cifar10",
+      "model": "resnet20",
+      "posterior_sampler": "jointdiag-laplace",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "samples_per_seed": 5,
+      "posterior_chains": 1,
+      "alignment": {
+        "method": "none",
+        "target": null,
+        "target_seed": null,
+        "target_frame_count": 0,
+        "target_frame_fraction": 0.0,
+        "record_count": 0,
+        "source_counts": {},
+        "by_source": {}
+      },
+      "direct_sample_row": {
+        "comparison": "posterior_samples_vs_tickets",
+        "left_count": 25.0,
+        "right_count": 5.0,
+        "posterior_num_clusters": 1.0,
+        "posterior_effective_cluster_count": 1.0,
+        "layer_ks_pvalue": 1.0853652897428057e-08,
+        "hamming_overlap": 0.0,
+        "hamming_cross_mean": 0.24842962612958483,
+        "logit_cka_hungarian_mean": 0.9372803519053095,
+        "activation_cka_hungarian_mean": 0.9199232897851456,
+        "passes_layer_ks": false,
+        "passes_hamming_overlap": false,
+        "passes_logit_cka": true,
+        "passes_activation_cka": true,
+        "mask_distribution_pass": false,
+        "basin_count_matches_tickets": false,
+        "direct_equivalence_pass": false
+      },
+      "file_inventory": {
+        "file_count": 6,
+        "suffix_counts": {
+          ".csv": 3,
+          ".json": 3
+        },
+        "raw_mask_or_state_files": [],
+        "raw_mask_or_state_file_count": 0
+      },
+      "missing": false
+    }
+  ],
+  "overall": {
+    "run_count": 7,
+    "direct_sample_row_count": 7,
+    "aligned_run_count": 2,
+    "aligned_sample_row_count": 2,
+    "aligned_rows_all_fail_layer_ks": true,
+    "aligned_rows_all_fail_hamming_overlap": true,
+    "any_direct_equivalence_pass": false,
+    "direct_rows_all_collapse_to_one_basin": true,
+    "direct_rows_failing_layer_ks": 7,
+    "direct_rows_failing_hamming_overlap": 6,
+    "raw_mask_artifacts_present": false,
+    "raw_mask_or_state_file_count": 0,
+    "posthoc_exhaustive_permutation_supported": false,
+    "posthoc_limitation_statement": "post-hoc exhaustive graph/permutation realignment is not supported by the current direct-run artifacts",
+    "future_closure_requires": [
+      "saving raw posterior, chain-start, and ticket masks or states",
+      "rerunning direct probes with alternative target frames",
+      "adding an exhaustive graph/permutation matching objective over saved masks"
+    ]
+  }
+}
