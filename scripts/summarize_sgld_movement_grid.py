@@ -1,0 +1,187 @@
+#!/usr/bin/env python
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+import math
+from collections import defaultdict
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+
+FIELDS = [
+    "sgld_lr",
+    "num_runs",
+    "dense_accuracy",
+    "imp_accuracy",
+    "posterior_jaccard_mean",
+    "random_jaccard_mean",
+    "chain_start_magnitude_to_imp_jaccard",
+    "posterior_minus_chain_start_jaccard",
+    "posterior_to_chain_start_magnitude_jaccard_mean",
+    "dense_magnitude_to_imp_jaccard",
+    "initial_magnitude_to_imp_jaccard",
+    "rewind_magnitude_to_imp_jaccard",
+    "snip_to_imp_jaccard",
+    "synflow_to_imp_jaccard",
+    "sample_accuracy_mean",
+    "sample_to_dense_prediction_agreement_mean",
+    "sample_to_imp_prediction_agreement_mean",
+    "state_num_clusters",
+    "function_num_clusters",
+]
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--run-root", type=Path, required=True)
+    parser.add_argument("--out-csv", type=Path, required=True)
+    parser.add_argument("--out-md", type=Path, required=True)
+    return parser.parse_args()
+
+
+def load_rows(run_root: Path) -> list[dict[str, float]]:
+    rows = []
+    for path in sorted(run_root.glob("*/metrics.json")):
+        with path.open(encoding="utf-8") as f:
+            payload = json.load(f)
+        seed = float(payload["seed"])
+        for row in payload["rows"]:
+            out = {"seed": seed}
+            for key, value in row.items():
+                if isinstance(value, (int, float)) and value is not None:
+                    out[key] = float(value)
+            rows.append(out)
+    if not rows:
+        raise SystemExit(f"no movement grid metrics found under {run_root}")
+    return rows
+
+
+def mean(values: list[float]) -> float:
+    valid = [value for value in values if not math.isnan(value)]
+    return float(np.mean(valid)) if valid else float("nan")
+
+
+def std(values: list[float]) -> float:
+    valid = [value for value in values if not math.isnan(value)]
+    return float(np.std(valid, ddof=1)) if len(valid) > 1 else 0.0
+
+
+def summarize(rows: list[dict[str, float]]) -> list[dict[str, float]]:
+    by_lr: dict[float, list[dict[str, float]]] = defaultdict(list)
+    for row in rows:
+        by_lr[row["sgld_lr"]].append(row)
+
+    summary_rows = []
+    for sgld_lr in sorted(by_lr):
+        group = by_lr[sgld_lr]
+        out: dict[str, float] = {
+            "sgld_lr": sgld_lr,
+            "num_runs": float(len({row["seed"] for row in group})),
+        }
+        for field in FIELDS:
+            if field in {"sgld_lr", "num_runs"}:
+                continue
+            out[field] = mean([row.get(field, float("nan")) for row in group])
+            out[f"{field}_std"] = std([row.get(field, float("nan")) for row in group])
+        summary_rows.append(out)
+    return summary_rows
+
+
+def fmt(value: Any) -> str:
+    if isinstance(value, float):
+        if math.isnan(value):
+            return "n/a"
+        if abs(value) < 1e-4 or abs(value) >= 1e4:
+            return f"{value:.1e}"
+        return f"{value:.4f}"
+    return str(value)
+
+
+def write_markdown(rows: list[dict[str, float]], path: Path) -> None:
+    headers = [
+        "Sampler LR/Scale",
+        "Runs",
+        "Dense Acc",
+        "IMP Acc",
+        "Posterior",
+        "Random",
+        "Chain Start",
+        "Post-Chain Start",
+        "Post-Chain",
+        "Dense Mag",
+        "Initial Mag",
+        "Rewind Mag",
+        "SNIP",
+        "SynFlow",
+        "Sample Acc",
+        "State Clusters",
+        "Function Clusters",
+    ]
+    keys = [
+        "sgld_lr",
+        "num_runs",
+        "dense_accuracy",
+        "imp_accuracy",
+        "posterior_jaccard_mean",
+        "random_jaccard_mean",
+        "chain_start_magnitude_to_imp_jaccard",
+        "posterior_minus_chain_start_jaccard",
+        "posterior_to_chain_start_magnitude_jaccard_mean",
+        "dense_magnitude_to_imp_jaccard",
+        "initial_magnitude_to_imp_jaccard",
+        "rewind_magnitude_to_imp_jaccard",
+        "snip_to_imp_jaccard",
+        "synflow_to_imp_jaccard",
+        "sample_accuracy_mean",
+        "state_num_clusters",
+        "function_num_clusters",
+    ]
+    lines = [
+        "# Posterior Movement Grid Summary",
+        "",
+        "| " + " | ".join(headers) + " |",
+        "| " + " | ".join(["---"] + ["---:"] * (len(headers) - 1)) + " |",
+    ]
+    for row in rows:
+        lines.append("| " + " | ".join(fmt(row[key]) for key in keys) + " |")
+    lines.extend(
+        [
+            "",
+            "Interpretation:",
+            "",
+            "A posterior-mode rescue would require Post-Chain to fall while",
+            "Posterior rises above Chain Start. If Posterior falls or stays below",
+            "Chain Start as Post-Chain decreases, movement is not ticket-directed.",
+            "",
+            "This file is generated by `scripts/summarize_sgld_movement_grid.py`.",
+        ]
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def main() -> None:
+    args = parse_args()
+    rows = summarize(load_rows(args.run_root))
+    args.out_csv.parent.mkdir(parents=True, exist_ok=True)
+    fieldnames = []
+    for field in FIELDS:
+        fieldnames.append(field)
+        if field not in {"sgld_lr", "num_runs"}:
+            fieldnames.append(f"{field}_std")
+    with args.out_csv.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    write_markdown(rows, args.out_md)
+    print(json.dumps(rows, indent=2))
+    print(f"wrote {args.out_csv}")
+    print(f"wrote {args.out_md}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,223 @@
+{
+  "model": "cifar10_resnet20",
+  "resnet_width": 16,
+  "blocks_per_stage": 3,
+  "input_shape": [
+    3,
+    32,
+    32
+  ],
+  "num_classes": 10,
+  "all_trainable": {
+    "parameter_count": 272474,
+    "dense_matrix_elements": 74242080676,
+    "dense_precision_float64_gib": 553.1466057598591,
+    "precision_plus_cholesky_float64_gib": 1106.2932115197182,
+    "packed_symmetric_float64_gib": 276.5743179246783,
+    "dense_precision_float32_gib": 276.57330287992954,
+    "cholesky_flops": 6743012230037475.0
+  },
+  "weight_only": {
+    "parameter_count": 270896,
+    "dense_matrix_elements": 73384642816,
+    "dense_precision_float64_gib": 546.7581958770752,
+    "precision_plus_cholesky_float64_gib": 1093.5163917541504,
+    "packed_symmetric_float64_gib": 273.3801071047783,
+    "dense_precision_float32_gib": 273.3790979385376,
+    "cholesky_flops": 6626535400094379.0
+  },
+  "all_trainable_tensor_block_diagonal": {
+    "block_count": 65,
+    "parameter_count": 272474,
+    "dense_matrix_elements": 7617396580,
+    "dense_precision_float64_gib": 56.75402715802193,
+    "precision_plus_cholesky_float64_gib": 113.50805431604385,
+    "packed_symmetric_float64_gib": 28.378028623759747,
+    "dense_precision_float32_gib": 28.377013579010963,
+    "cholesky_flops": 86946214446754.67
+  },
+  "weight_tensor_block_diagonal": {
+    "block_count": 22,
+    "parameter_count": 270896,
+    "dense_matrix_elements": 7617321216,
+    "dense_precision_float64_gib": 56.75346565246582,
+    "precision_plus_cholesky_float64_gib": 113.50693130493164,
+    "packed_symmetric_float64_gib": 28.377741992473602,
+    "dense_precision_float32_gib": 28.37673282623291,
+    "cholesky_flops": 86946213051050.67
+  },
+  "largest_parameter_tensors": [
+    {
+      "name": "layer3.0.conv2.weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "parameter_count": 36864,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 10.125,
+      "precision_plus_cholesky_float64_gib": 20.25,
+      "cholesky_flops": 16698832846848.0
+    },
+    {
+      "name": "layer3.1.conv1.weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "parameter_count": 36864,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 10.125,
+      "precision_plus_cholesky_float64_gib": 20.25,
+      "cholesky_flops": 16698832846848.0
+    },
+    {
+      "name": "layer3.1.conv2.weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "parameter_count": 36864,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 10.125,
+      "precision_plus_cholesky_float64_gib": 20.25,
+      "cholesky_flops": 16698832846848.0
+    },
+    {
+      "name": "layer3.2.conv1.weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "parameter_count": 36864,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 10.125,
+      "precision_plus_cholesky_float64_gib": 20.25,
+      "cholesky_flops": 16698832846848.0
+    },
+    {
+      "name": "layer3.2.conv2.weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "parameter_count": 36864,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 10.125,
+      "precision_plus_cholesky_float64_gib": 20.25,
+      "cholesky_flops": 16698832846848.0
+    },
+    {
+      "name": "layer3.0.conv1.weight",
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "parameter_count": 18432,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 2.53125,
+      "precision_plus_cholesky_float64_gib": 5.0625,
+      "cholesky_flops": 2087354105856.0
+    },
+    {
+      "name": "layer2.0.conv2.weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "parameter_count": 9216,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 0.6328125,
+      "precision_plus_cholesky_float64_gib": 1.265625,
+      "cholesky_flops": 260919263232.0
+    },
+    {
+      "name": "layer2.1.conv1.weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "parameter_count": 9216,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 0.6328125,
+      "precision_plus_cholesky_float64_gib": 1.265625,
+      "cholesky_flops": 260919263232.0
+    },
+    {
+      "name": "layer2.1.conv2.weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "parameter_count": 9216,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 0.6328125,
+      "precision_plus_cholesky_float64_gib": 1.265625,
+      "cholesky_flops": 260919263232.0
+    },
+    {
+      "name": "layer2.2.conv1.weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "parameter_count": 9216,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 0.6328125,
+      "precision_plus_cholesky_float64_gib": 1.265625,
+      "cholesky_flops": 260919263232.0
+    },
+    {
+      "name": "layer2.2.conv2.weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "parameter_count": 9216,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 0.6328125,
+      "precision_plus_cholesky_float64_gib": 1.265625,
+      "cholesky_flops": 260919263232.0
+    },
+    {
+      "name": "layer2.0.conv1.weight",
+      "shape": [
+        32,
+        16,
+        3,
+        3
+      ],
+      "parameter_count": 4608,
+      "is_weight_mask_parameter": true,
+      "dense_precision_float64_gib": 0.158203125,
+      "precision_plus_cholesky_float64_gib": 0.31640625,
+      "cholesky_flops": 32614907904.0
+    }
+  ],
+  "interpretation": {
+    "decision": "not a runnable exact full-covariance CIFAR posterior under the single-workstation budget",
+    "reason": "the dense all-trainable covariance needs hundreds of GiB before workspace and an O(N^3) Cholesky; even tensor-block exact covariance is dominated by 36,864-parameter convolution blocks"
+  }
+}

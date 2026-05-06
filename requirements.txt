@@ -1,0 +1,9 @@
+# Core numerical stack.
+numpy
+scipy
+scikit-learn
+matplotlib
+
+# Deep-learning stack. Install the CUDA/CPU build appropriate for the machine.
+torch
+torchvision

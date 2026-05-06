@@ -1,0 +1,53 @@
+{
+  "summary_json": "runs/fashion_gate1_quick_summary.json",
+  "num_runs": 2,
+  "metrics": {
+    "posterior_jaccard_mean": 0.25770117757410177,
+    "random_jaccard_mean": 0.20677768006109531,
+    "chain_start_magnitude_to_imp_jaccard_mean": 0.25772939432441183,
+    "posterior_to_chain_start_magnitude_jaccard_mean": 0.9580705365754854,
+    "dense_magnitude_to_imp_jaccard": 0.7101217231457887,
+    "state_num_clusters": 2.0,
+    "function_num_clusters": 2.5,
+    "dense_imp_linear_barrier": 0.005093867492675819
+  },
+  "checks": [
+    {
+      "name": "posterior_beats_random",
+      "value": 0.050923497513006455,
+      "threshold": 0.02,
+      "passed": true
+    },
+    {
+      "name": "posterior_exceeds_chain_start",
+      "value": -2.8216750310061656e-05,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "name": "posterior_moves_support_from_chain_start",
+      "value": 0.9580705365754854,
+      "threshold": 0.9,
+      "passed": false
+    },
+    {
+      "name": "dense_magnitude_does_not_dominate",
+      "value": 0.4524205455716869,
+      "threshold": 0.05,
+      "passed": false
+    },
+    {
+      "name": "records_function_and_state_clusters",
+      "value": 2.0,
+      "threshold": 1.0,
+      "passed": true
+    },
+    {
+      "name": "records_dense_imp_connectivity",
+      "value": 0.005093867492675819,
+      "threshold": 0.0,
+      "passed": true
+    }
+  ],
+  "gate1_passed": false
+}

@@ -1,0 +1,73 @@
+{
+  "paper_tex": "paper/main.tex",
+  "submission_pdf": "paper/neurips_submission.pdf",
+  "official_style": "paper/neurips_2026.sty",
+  "checklist_tex": "paper/neurips_checklist.tex",
+  "external_validation_audit": "runs/external_validation_readiness_audit.json",
+  "local_gpu_validation": {
+    "path": "runs/local_gpu_container_validation.json",
+    "exists": true,
+    "local_gpu_container_ready": true,
+    "image_id": "sha256:6aff326fbf1c61b9528b98ccbc4a71a9861b2d94436a98f4800dc06e803a4646",
+    "risk_flags": []
+  },
+  "release_metadata_docs": {
+    "compute_resource_accounting": {
+      "path": "docs/compute_resource_accounting.md",
+      "exists": true,
+      "size_bytes": 5661,
+      "required_terms_present": true,
+      "missing_terms": []
+    },
+    "asset_license_inventory": {
+      "path": "docs/asset_license_inventory.md",
+      "exists": true,
+      "size_bytes": 5606,
+      "required_terms_present": true,
+      "missing_terms": []
+    },
+    "new_asset_inventory": {
+      "path": "docs/new_asset_inventory.md",
+      "exists": true,
+      "size_bytes": 5131,
+      "required_terms_present": true,
+      "missing_terms": []
+    }
+  },
+  "venue_profile": "neurips_2026_main",
+  "target_venue": "NeurIPS 2026 Main Track",
+  "document_class": "article",
+  "known_venue_style_detected": true,
+  "official_style_file_present": true,
+  "neurips_style_source_wired": true,
+  "neurips_natbib_options_wired": true,
+  "neurips_checklist_input_wired": true,
+  "neurips_checklist_present": true,
+  "neurips_checklist_no_todos": true,
+  "appendix_after_references_wired": true,
+  "title_present": true,
+  "anonymous_author": true,
+  "abstract_word_count": 238,
+  "max_abstract_words": 250,
+  "submission_pdf_pages": 20,
+  "reference_start_page": 9,
+  "content_pages_before_references": 8,
+  "max_pages_before_references": 9,
+  "size_bytes": 292374,
+  "figure_count": 3,
+  "table_count": 3,
+  "bibliography_present": true,
+  "content_risk_flags": [],
+  "venue_binding_risk_flags": [],
+  "checklist_release_risk_flags": [],
+  "release_packaging_risk_flags": [],
+  "release_packaging_warning_flags": [
+    "external_gpu_container_run_not_observed"
+  ],
+  "content_packet_ready": true,
+  "venue_binding_ready": true,
+  "checklist_release_ready": true,
+  "release_packaging_ready": true,
+  "venue_submission_ready": true,
+  "blocking_next_steps": []
+}
