@@ -1,0 +1,12 @@
+# Pinned core environment used for the paper artifacts.
+#
+# This intentionally locks the project-critical numerical and deep-learning
+# stack rather than the whole workstation site-packages set. The full local
+# runtime metadata is checked by `scripts/check_environment_lock.py` against
+# `docs/environment_lock.json`.
+matplotlib==3.6.3
+numpy==1.26.4
+scikit-learn==1.4.1.post1
+scipy==1.11.4
+torch==2.11.0
+torchvision==0.26.0

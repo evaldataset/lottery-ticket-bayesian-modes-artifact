@@ -1,0 +1,2 @@
+label,num_runs,dense_acc,imp_acc,sparsity,posterior,random,posterior_minus_random,chain_start,posterior_minus_chain_start,posterior_to_chain_start,dense_magnitude,dense_minus_posterior,snip,synflow,gate1_passed
+r5_p0p3,1,0.8836,0.8584,0.8319318114700844,0.13811830355176388,0.09155466279237683,0.04656364075938706,0.1380827396575428,3.556389422107453e-05,0.9971926058675902,0.14239474080393436,0.004276437252170473,0.13417034103081485,0.17179698357955422,False

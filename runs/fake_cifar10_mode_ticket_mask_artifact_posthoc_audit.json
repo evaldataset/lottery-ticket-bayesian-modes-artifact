@@ -1,0 +1,1041 @@
+{
+  "date": "2026-05-06",
+  "artifact_path": "runs/fake_cifar10_mode_ticket_mask_artifact_smoke/20260506_225421/mask_artifacts.npz",
+  "metadata": {
+    "alignment_method": "activation",
+    "blocks_per_stage": 3,
+    "cnn_width": 32,
+    "data_seed": 0,
+    "dataset": "fake-cifar10",
+    "depth": 3,
+    "hidden_dim": 128,
+    "input_shape": [
+      3,
+      32,
+      32
+    ],
+    "mask_encoding": "uint8_keep_mask_flattened_by_parameter_names",
+    "model": "resnet20",
+    "num_classes": 10,
+    "posterior_chain_init": "dense",
+    "posterior_chains": 1,
+    "posterior_sampler": "sgld",
+    "resnet_width": 2,
+    "seeds": [
+      0,
+      1
+    ],
+    "state_encoding": "float32_flattened_by_parameter_names",
+    "test_subset": 32,
+    "train_subset": 64
+  },
+  "collections": [
+    {
+      "name": "activation_aligned_chain_start",
+      "mask_count": 2,
+      "parameter_count": 4350,
+      "keep_count_mean": 3045.0,
+      "keep_fraction_mean": 0.7,
+      "state_count": 2
+    },
+    {
+      "name": "activation_aligned_posterior_mode",
+      "mask_count": 2,
+      "parameter_count": 4350,
+      "keep_count_mean": 3045.0,
+      "keep_fraction_mean": 0.7,
+      "state_count": 2
+    },
+    {
+      "name": "activation_aligned_posterior_sample",
+      "mask_count": 2,
+      "parameter_count": 4350,
+      "keep_count_mean": 3045.0,
+      "keep_fraction_mean": 0.7,
+      "state_count": 2
+    },
+    {
+      "name": "activation_aligned_ticket",
+      "mask_count": 2,
+      "parameter_count": 4350,
+      "keep_count_mean": 3045.0,
+      "keep_fraction_mean": 0.7,
+      "state_count": 2
+    },
+    {
+      "name": "chain_start",
+      "mask_count": 2,
+      "parameter_count": 4350,
+      "keep_count_mean": 3045.0,
+      "keep_fraction_mean": 0.7,
+      "state_count": 2
+    },
+    {
+      "name": "posterior_mode",
+      "mask_count": 2,
+      "parameter_count": 4350,
+      "keep_count_mean": 3045.0,
+      "keep_fraction_mean": 0.7,
+      "state_count": 2
+    },
+    {
+      "name": "posterior_sample",
+      "mask_count": 2,
+      "parameter_count": 4350,
+      "keep_count_mean": 3045.0,
+      "keep_fraction_mean": 0.7,
+      "state_count": 2
+    },
+    {
+      "name": "ticket",
+      "mask_count": 2,
+      "parameter_count": 4350,
+      "keep_count_mean": 3045.0,
+      "keep_fraction_mean": 0.7,
+      "state_count": 2
+    }
+  ],
+  "comparisons": [
+    {
+      "label": "raw posterior samples vs tickets",
+      "left": "posterior_sample",
+      "right": "ticket",
+      "left_count": 2,
+      "right_count": 2,
+      "same_index_pair_count": 2,
+      "optimal_pair_count": 2,
+      "hungarian_pair_count": 2,
+      "natural_hamming": {
+        "mean": 0.002988505747126437,
+        "min": 0.002758620689655172,
+        "max": 0.003218390804597701
+      },
+      "optimal_hamming": {
+        "mean": 0.002988505747126437,
+        "min": 0.002758620689655172,
+        "max": 0.003218390804597701
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.9957398536800989,
+        "min": 0.9954128440366973,
+        "max": 0.9960668633235005
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.9957398536800989,
+        "min": 0.9954128440366973,
+        "max": 0.9960668633235005
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.9978653530377668,
+        "min": 0.9977011494252873,
+        "max": 0.9980295566502463
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.9978653530377668,
+        "min": 0.9977011494252873,
+        "max": 0.9980295566502463
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_0",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_0",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.012518017708279332,
+          "min": 0.01240667034537266,
+          "max": 0.012629365071186005
+        },
+        "optimal_state_rms": {
+          "mean": 0.012518017708279332,
+          "min": 0.01240667034537266,
+          "max": 0.012629365071186005
+        }
+      },
+      "channel_permutation": {
+        "channel_key_count": 19,
+        "natural_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "record_optimal_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "channel_optimal_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "channel_optimal_pair_count": 2,
+        "channel_optimal_pairs": [
+          {
+            "left_index": 0,
+            "right_index": 0,
+            "left_id": "posterior_seed_0_chain_0_sample_0",
+            "right_id": "ticket_seed_0"
+          },
+          {
+            "left_index": 1,
+            "right_index": 1,
+            "left_id": "posterior_seed_1_chain_0_sample_0",
+            "right_id": "ticket_seed_1"
+          }
+        ]
+      },
+      "channel_permutation_skipped": false
+    },
+    {
+      "label": "raw posterior modes vs tickets",
+      "left": "posterior_mode",
+      "right": "ticket",
+      "left_count": 2,
+      "right_count": 2,
+      "same_index_pair_count": 2,
+      "optimal_pair_count": 2,
+      "hungarian_pair_count": 2,
+      "natural_hamming": {
+        "mean": 0.002988505747126437,
+        "min": 0.002758620689655172,
+        "max": 0.003218390804597701
+      },
+      "optimal_hamming": {
+        "mean": 0.002988505747126437,
+        "min": 0.002758620689655172,
+        "max": 0.003218390804597701
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.9957398536800989,
+        "min": 0.9954128440366973,
+        "max": 0.9960668633235005
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.9957398536800989,
+        "min": 0.9954128440366973,
+        "max": 0.9960668633235005
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.9978653530377668,
+        "min": 0.9977011494252873,
+        "max": 0.9980295566502463
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.9978653530377668,
+        "min": 0.9977011494252873,
+        "max": 0.9980295566502463
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_mode_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_mode_1_sample_1",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_mode_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_mode_1_sample_1",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.012518017708279332,
+          "min": 0.01240667034537266,
+          "max": 0.012629365071186005
+        },
+        "optimal_state_rms": {
+          "mean": 0.012518017708279332,
+          "min": 0.01240667034537266,
+          "max": 0.012629365071186005
+        }
+      },
+      "channel_permutation": {
+        "channel_key_count": 19,
+        "natural_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "record_optimal_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "channel_optimal_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "channel_optimal_pair_count": 2,
+        "channel_optimal_pairs": [
+          {
+            "left_index": 0,
+            "right_index": 0,
+            "left_id": "posterior_mode_0_sample_0",
+            "right_id": "ticket_seed_0"
+          },
+          {
+            "left_index": 1,
+            "right_index": 1,
+            "left_id": "posterior_mode_1_sample_1",
+            "right_id": "ticket_seed_1"
+          }
+        ]
+      },
+      "channel_permutation_skipped": false
+    },
+    {
+      "label": "raw chain starts vs tickets",
+      "left": "chain_start",
+      "right": "ticket",
+      "left_count": 2,
+      "right_count": 2,
+      "same_index_pair_count": 2,
+      "optimal_pair_count": 2,
+      "hungarian_pair_count": 2,
+      "natural_hamming": {
+        "mean": 0.0018390804597701149,
+        "min": 0.0018390804597701149,
+        "max": 0.0018390804597701149
+      },
+      "optimal_hamming": {
+        "mean": 0.0018390804597701149,
+        "min": 0.0018390804597701149,
+        "max": 0.0018390804597701149
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.9973761889143982,
+        "min": 0.9973761889143982,
+        "max": 0.9973761889143982
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.9973761889143982,
+        "min": 0.9973761889143982,
+        "max": 0.9973761889143982
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.9986863711001642,
+        "min": 0.9986863711001642,
+        "max": 0.9986863711001642
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.9986863711001642,
+        "min": 0.9986863711001642,
+        "max": 0.9986863711001642
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.012516790723584276,
+          "min": 0.012405905260080648,
+          "max": 0.012627676187087903
+        },
+        "optimal_state_rms": {
+          "mean": 0.012516790723584276,
+          "min": 0.012405905260080648,
+          "max": 0.012627676187087903
+        }
+      },
+      "channel_permutation": {
+        "channel_key_count": 19,
+        "natural_hamming": {
+          "mean": 0.0018390804597701149,
+          "min": 0.0018390804597701149,
+          "max": 0.0018390804597701149
+        },
+        "record_optimal_hamming": {
+          "mean": 0.0018390804597701149,
+          "min": 0.0018390804597701149,
+          "max": 0.0018390804597701149
+        },
+        "channel_optimal_hamming": {
+          "mean": 0.0018390804597701149,
+          "min": 0.0018390804597701149,
+          "max": 0.0018390804597701149
+        },
+        "channel_optimal_pair_count": 2,
+        "channel_optimal_pairs": [
+          {
+            "left_index": 0,
+            "right_index": 0,
+            "left_id": "chain_start_seed_0_chain_0",
+            "right_id": "ticket_seed_0"
+          },
+          {
+            "left_index": 1,
+            "right_index": 1,
+            "left_id": "chain_start_seed_1_chain_0",
+            "right_id": "ticket_seed_1"
+          }
+        ]
+      },
+      "channel_permutation_skipped": false
+    },
+    {
+      "label": "activation-aligned posterior samples vs tickets",
+      "left": "activation_aligned_posterior_sample",
+      "right": "activation_aligned_ticket",
+      "left_count": 2,
+      "right_count": 2,
+      "same_index_pair_count": 2,
+      "optimal_pair_count": 2,
+      "hungarian_pair_count": 2,
+      "natural_hamming": {
+        "mean": 0.13333333333333333,
+        "min": 0.003218390804597701,
+        "max": 0.263448275862069
+      },
+      "optimal_hamming": {
+        "mean": 0.13333333333333333,
+        "min": 0.003218390804597701,
+        "max": 0.263448275862069
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.8393316293151978,
+        "min": 0.6832504145936982,
+        "max": 0.9954128440366973
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.8393316293151978,
+        "min": 0.6832504145936982,
+        "max": 0.9954128440366973
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.9047619047619048,
+        "min": 0.8118226600985222,
+        "max": 0.9977011494252873
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.9047619047619048,
+        "min": 0.8118226600985222,
+        "max": 0.9977011494252873
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_0",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_0",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.050333263251677945,
+          "min": 0.01240667034537266,
+          "max": 0.08825985615798324
+        },
+        "optimal_state_rms": {
+          "mean": 0.050333263251677945,
+          "min": 0.01240667034537266,
+          "max": 0.08825985615798324
+        }
+      },
+      "channel_permutation": {
+        "channel_key_count": 19,
+        "natural_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "record_optimal_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "channel_optimal_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "channel_optimal_pair_count": 2,
+        "channel_optimal_pairs": [
+          {
+            "left_index": 0,
+            "right_index": 0,
+            "left_id": "posterior_seed_0_chain_0_sample_0",
+            "right_id": "ticket_seed_0"
+          },
+          {
+            "left_index": 1,
+            "right_index": 1,
+            "left_id": "posterior_seed_1_chain_0_sample_0",
+            "right_id": "ticket_seed_1"
+          }
+        ]
+      },
+      "channel_permutation_skipped": false
+    },
+    {
+      "label": "activation-aligned posterior modes vs tickets",
+      "left": "activation_aligned_posterior_mode",
+      "right": "activation_aligned_ticket",
+      "left_count": 2,
+      "right_count": 2,
+      "same_index_pair_count": 2,
+      "optimal_pair_count": 2,
+      "hungarian_pair_count": 2,
+      "natural_hamming": {
+        "mean": 0.13333333333333333,
+        "min": 0.003218390804597701,
+        "max": 0.263448275862069
+      },
+      "optimal_hamming": {
+        "mean": 0.13333333333333333,
+        "min": 0.003218390804597701,
+        "max": 0.263448275862069
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.8393316293151978,
+        "min": 0.6832504145936982,
+        "max": 0.9954128440366973
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.8393316293151978,
+        "min": 0.6832504145936982,
+        "max": 0.9954128440366973
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.9047619047619048,
+        "min": 0.8118226600985222,
+        "max": 0.9977011494252873
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.9047619047619048,
+        "min": 0.8118226600985222,
+        "max": 0.9977011494252873
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "activation_aligned_posterior_mode_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "activation_aligned_posterior_mode_1_sample_1",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "activation_aligned_posterior_mode_0_sample_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "activation_aligned_posterior_mode_1_sample_1",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.050333263251677945,
+          "min": 0.01240667034537266,
+          "max": 0.08825985615798324
+        },
+        "optimal_state_rms": {
+          "mean": 0.050333263251677945,
+          "min": 0.01240667034537266,
+          "max": 0.08825985615798324
+        }
+      },
+      "channel_permutation": {
+        "channel_key_count": 19,
+        "natural_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "record_optimal_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "channel_optimal_hamming": {
+          "mean": 0.002988505747126437,
+          "min": 0.002758620689655172,
+          "max": 0.003218390804597701
+        },
+        "channel_optimal_pair_count": 2,
+        "channel_optimal_pairs": [
+          {
+            "left_index": 0,
+            "right_index": 0,
+            "left_id": "activation_aligned_posterior_mode_0_sample_0",
+            "right_id": "ticket_seed_0"
+          },
+          {
+            "left_index": 1,
+            "right_index": 1,
+            "left_id": "activation_aligned_posterior_mode_1_sample_1",
+            "right_id": "ticket_seed_1"
+          }
+        ]
+      },
+      "channel_permutation_skipped": false
+    },
+    {
+      "label": "activation-aligned chain starts vs tickets",
+      "left": "activation_aligned_chain_start",
+      "right": "activation_aligned_ticket",
+      "left_count": 2,
+      "right_count": 2,
+      "same_index_pair_count": 2,
+      "optimal_pair_count": 2,
+      "hungarian_pair_count": 2,
+      "natural_hamming": {
+        "mean": 0.17333333333333334,
+        "min": 0.0018390804597701149,
+        "max": 0.3448275862068966
+      },
+      "optimal_hamming": {
+        "mean": 0.17333333333333334,
+        "min": 0.0018390804597701149,
+        "max": 0.3448275862068966
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.8010596359591753,
+        "min": 0.6047430830039525,
+        "max": 0.9973761889143982
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.8010596359591753,
+        "min": 0.6047430830039525,
+        "max": 0.9973761889143982
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.8761904761904762,
+        "min": 0.7536945812807881,
+        "max": 0.9986863711001642
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.8761904761904762,
+        "min": 0.7536945812807881,
+        "max": 0.9986863711001642
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "chain_start_seed_0_chain_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "chain_start_seed_1_chain_0",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.059176558621412766,
+          "min": 0.012405905260080648,
+          "max": 0.10594721198274488
+        },
+        "optimal_state_rms": {
+          "mean": 0.059176558621412766,
+          "min": 0.012405905260080648,
+          "max": 0.10594721198274488
+        }
+      },
+      "channel_permutation": {
+        "channel_key_count": 19,
+        "natural_hamming": {
+          "mean": 0.023448275862068966,
+          "min": 0.0018390804597701149,
+          "max": 0.045057471264367814
+        },
+        "record_optimal_hamming": {
+          "mean": 0.023448275862068966,
+          "min": 0.0018390804597701149,
+          "max": 0.045057471264367814
+        },
+        "channel_optimal_hamming": {
+          "mean": 0.023448275862068966,
+          "min": 0.0018390804597701149,
+          "max": 0.045057471264367814
+        },
+        "channel_optimal_pair_count": 2,
+        "channel_optimal_pairs": [
+          {
+            "left_index": 0,
+            "right_index": 0,
+            "left_id": "chain_start_seed_0_chain_0",
+            "right_id": "ticket_seed_0"
+          },
+          {
+            "left_index": 1,
+            "right_index": 1,
+            "left_id": "chain_start_seed_1_chain_0",
+            "right_id": "ticket_seed_1"
+          }
+        ]
+      },
+      "channel_permutation_skipped": false
+    },
+    {
+      "label": "posterior sample raw-vs-aligned delta",
+      "left": "posterior_sample",
+      "right": "activation_aligned_posterior_sample",
+      "left_count": 2,
+      "right_count": 2,
+      "same_index_pair_count": 2,
+      "optimal_pair_count": 2,
+      "hungarian_pair_count": 2,
+      "natural_hamming": {
+        "mean": 0.19655172413793104,
+        "min": 0.0,
+        "max": 0.3931034482758621
+      },
+      "optimal_hamming": {
+        "mean": 0.19655172413793104,
+        "min": 0.0,
+        "max": 0.3931034482758621
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.7807692307692308,
+        "min": 0.5615384615384615,
+        "max": 1.0
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.7807692307692308,
+        "min": 0.5615384615384615,
+        "max": 1.0
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.8596059113300493,
+        "min": 0.7192118226600985,
+        "max": 1.0
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.8596059113300493,
+        "min": 0.7192118226600985,
+        "max": 1.0
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "posterior_seed_0_chain_0_sample_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_0",
+          "right_id": "posterior_seed_1_chain_0_sample_0"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "posterior_seed_0_chain_0_sample_0",
+          "right_id": "posterior_seed_0_chain_0_sample_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "posterior_seed_1_chain_0_sample_0",
+          "right_id": "posterior_seed_1_chain_0_sample_0"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.05907359167804645,
+          "min": 0.0,
+          "max": 0.1181471833560929
+        },
+        "optimal_state_rms": {
+          "mean": 0.05907359167804645,
+          "min": 0.0,
+          "max": 0.1181471833560929
+        }
+      },
+      "channel_permutation": {
+        "channel_key_count": 19,
+        "natural_hamming": {
+          "mean": 0.12275862068965518,
+          "min": 0.0,
+          "max": 0.24551724137931036
+        },
+        "record_optimal_hamming": {
+          "mean": 0.12275862068965518,
+          "min": 0.0,
+          "max": 0.24551724137931036
+        },
+        "channel_optimal_hamming": {
+          "mean": 0.12275862068965518,
+          "min": 0.0,
+          "max": 0.24551724137931036
+        },
+        "channel_optimal_pair_count": 2,
+        "channel_optimal_pairs": [
+          {
+            "left_index": 0,
+            "right_index": 0,
+            "left_id": "posterior_seed_0_chain_0_sample_0",
+            "right_id": "posterior_seed_0_chain_0_sample_0"
+          },
+          {
+            "left_index": 1,
+            "right_index": 1,
+            "left_id": "posterior_seed_1_chain_0_sample_0",
+            "right_id": "posterior_seed_1_chain_0_sample_0"
+          }
+        ]
+      },
+      "channel_permutation_skipped": false
+    },
+    {
+      "label": "ticket raw-vs-aligned delta",
+      "left": "ticket",
+      "right": "activation_aligned_ticket",
+      "left_count": 2,
+      "right_count": 2,
+      "same_index_pair_count": 2,
+      "optimal_pair_count": 2,
+      "hungarian_pair_count": 2,
+      "natural_hamming": {
+        "mean": 0.19701149425287356,
+        "min": 0.0,
+        "max": 0.39402298850574713
+      },
+      "optimal_hamming": {
+        "mean": 0.19701149425287356,
+        "min": 0.0,
+        "max": 0.39402298850574713
+      },
+      "hamming_improvement": 0.0,
+      "natural_jaccard_keep": {
+        "mean": 0.7803690415171707,
+        "min": 0.5607380830343414,
+        "max": 1.0
+      },
+      "optimal_jaccard_keep": {
+        "mean": 0.7803690415171707,
+        "min": 0.5607380830343414,
+        "max": 1.0
+      },
+      "natural_support_overlap_min": {
+        "mean": 0.8592775041050903,
+        "min": 0.7185550082101806,
+        "max": 1.0
+      },
+      "optimal_support_overlap_min": {
+        "mean": 0.8592775041050903,
+        "min": 0.7185550082101806,
+        "max": 1.0
+      },
+      "natural_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "ticket_seed_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "ticket_seed_1",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "optimal_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 0,
+          "left_id": "ticket_seed_0",
+          "right_id": "ticket_seed_0"
+        },
+        {
+          "left_index": 1,
+          "right_index": 1,
+          "left_id": "ticket_seed_1",
+          "right_id": "ticket_seed_1"
+        }
+      ],
+      "state_distance": {
+        "natural_state_rms": {
+          "mean": 0.0595588464315831,
+          "min": 0.0,
+          "max": 0.1191176928631662
+        },
+        "optimal_state_rms": {
+          "mean": 0.0595588464315831,
+          "min": 0.0,
+          "max": 0.1191176928631662
+        }
+      },
+      "channel_permutation": {
+        "channel_key_count": 19,
+        "natural_hamming": {
+          "mean": 0.14114942528735633,
+          "min": 0.0,
+          "max": 0.28229885057471266
+        },
+        "record_optimal_hamming": {
+          "mean": 0.14114942528735633,
+          "min": 0.0,
+          "max": 0.28229885057471266
+        },
+        "channel_optimal_hamming": {
+          "mean": 0.14114942528735633,
+          "min": 0.0,
+          "max": 0.28229885057471266
+        },
+        "channel_optimal_pair_count": 2,
+        "channel_optimal_pairs": [
+          {
+            "left_index": 0,
+            "right_index": 0,
+            "left_id": "ticket_seed_0",
+            "right_id": "ticket_seed_0"
+          },
+          {
+            "left_index": 1,
+            "right_index": 1,
+            "left_id": "ticket_seed_1",
+            "right_id": "ticket_seed_1"
+          }
+        ]
+      },
+      "channel_permutation_skipped": false
+    }
+  ],
+  "skipped_comparisons": [],
+  "overall": {
+    "schema_version": 1,
+    "dataset": "fake-cifar10",
+    "model": "resnet20",
+    "parameter_count": 4350,
+    "parameter_name_count": 22,
+    "parameter_shapes_present": true,
+    "mask_collection_count": 8,
+    "state_collection_count": 8,
+    "resnet_channel_key_count": 19,
+    "required_collections_present": true,
+    "record_level_posthoc_matching_supported": true,
+    "local_channel_permutation_matching_supported": true,
+    "channel_permutation_comparison_count": 8,
+    "channel_permutation_skipped_count": 0,
+    "max_pair_count": 1024,
+    "max_channel_pair_count": 512,
+    "exhaustive_graph_channel_permutation_supported": false,
+    "limitation_statement": "record-level and local channel matching are supported when shapes are saved, but this fake fixture does not replace the full-data rerun or an exhaustive graph/channel permutation objective"
+  }
+}

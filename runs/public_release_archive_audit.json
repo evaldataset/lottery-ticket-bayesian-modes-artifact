@@ -1,0 +1,27 @@
+{
+  "archive_ready": true,
+  "archive": "dist/lottery_artifact_public_release_2026-05-06.tar.gz",
+  "archive_sha256": "824b74ebd447a17c3ca7a42722bc62726b4719fe456e16f6f1a1d6effc4a15e3",
+  "archive_bytes": 123141016,
+  "sha256_sidecar": "dist/lottery_artifact_public_release_2026-05-06.tar.gz.sha256",
+  "package_root": "lottery_artifact_public_release",
+  "manifest": "runs/public_release_manifest.json",
+  "manifest_root": ".",
+  "manifest_file_count": 1854,
+  "release_metadata_paths": [
+    "docs/public_release_manifest.md",
+    "runs/public_release_manifest.json",
+    "docs/release_anonymization_audit.md",
+    "runs/release_anonymization_audit.json"
+  ],
+  "release_metadata_count": 4,
+  "expected_member_count": 1858,
+  "actual_member_count": 1858,
+  "missing_source_paths": [],
+  "missing_members": [],
+  "extra_members": [],
+  "unsafe_members": [],
+  "non_file_members": [],
+  "member_size_mismatches": [],
+  "risk_flags": []
+}
