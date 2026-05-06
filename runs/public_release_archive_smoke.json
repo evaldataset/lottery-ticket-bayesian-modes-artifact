@@ -1,0 +1,27 @@
+{
+  "release_archive_smoke_ready": true,
+  "archive": "dist/lottery_artifact_public_release_2026-05-06.tar.gz",
+  "archive_sha256": "5b799026c44428c9990e8cdd2dd57dfd696507b9bf58b05575a9d94fee63fa0b",
+  "package_root": "lottery_artifact_public_release",
+  "manifest_root": ".",
+  "manifest_file_count": 1854,
+  "expected_file_count": 1858,
+  "actual_file_count": 1858,
+  "release_metadata_paths": [
+    "docs/public_release_manifest.md",
+    "runs/public_release_manifest.json",
+    "docs/release_anonymization_audit.md",
+    "runs/release_anonymization_audit.json"
+  ],
+  "metadata_missing": [],
+  "missing_files": [],
+  "extra_files": [],
+  "hash_mismatches": [],
+  "checked_hash_count": 1854,
+  "verifier": {
+    "returncode": 0,
+    "stdout_tail": "verified research artifacts: core paper evidence and generated stats are present\n",
+    "stderr_tail": ""
+  },
+  "risk_flags": []
+}
