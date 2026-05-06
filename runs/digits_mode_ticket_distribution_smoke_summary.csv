@@ -1,0 +1,3 @@
+run,dataset,model,posterior_sampler,comparison,left_count,right_count,layer_ks_pvalue,layer_mmd_rbf,layer_sliced_wasserstein,hamming_overlap,hamming_cross_mean,logit_cka_hungarian_mean,hungarian_cost,passes_layer_ks,passes_hamming_overlap,passes_logit_cka,passes_hungarian_cost
+runs/digits_mode_ticket_distribution_smoke/20260505_221521,digits,mlp,sgld,posterior_samples_vs_tickets,4,2,0.9979797979797981,0.1967346701436834,0.00103451216747641,0.6666666666666666,0.2109375,0.9746261977310278,0.02537380226897229,True,False,True,True
+runs/digits_mode_ticket_distribution_smoke/20260505_221521,digits,mlp,sgld,posterior_modes_vs_tickets,1,2,1.0,0.0,0.0,nan,0.21114864864864866,0.9699452687225837,0.030054731277416313,True,False,True,True
