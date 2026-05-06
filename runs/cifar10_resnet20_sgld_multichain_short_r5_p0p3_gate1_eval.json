@@ -1,0 +1,53 @@
+{
+  "summary_json": "runs/cifar10_resnet20_sgld_multichain_short_r5_p0p3_summary.json",
+  "num_runs": 5,
+  "metrics": {
+    "posterior_jaccard_mean": 0.12905318883864872,
+    "random_jaccard_mean": 0.0917358564757305,
+    "chain_start_magnitude_to_imp_jaccard_mean": 0.12906314700835686,
+    "posterior_to_chain_start_magnitude_jaccard_mean": 0.9963293026095735,
+    "dense_magnitude_to_imp_jaccard": 0.16894559917863283,
+    "state_num_clusters": 3.0,
+    "function_num_clusters": 3.0,
+    "dense_imp_linear_barrier": 3.3408625018310545
+  },
+  "checks": [
+    {
+      "name": "posterior_beats_random",
+      "value": 0.03731733236291822,
+      "threshold": 0.02,
+      "passed": true
+    },
+    {
+      "name": "posterior_exceeds_chain_start",
+      "value": -9.958169708140785e-06,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "name": "posterior_moves_support_from_chain_start",
+      "value": 0.9963293026095735,
+      "threshold": 0.9,
+      "passed": false
+    },
+    {
+      "name": "dense_magnitude_does_not_dominate",
+      "value": 0.03989241033998411,
+      "threshold": 0.05,
+      "passed": true
+    },
+    {
+      "name": "records_function_and_state_clusters",
+      "value": 3.0,
+      "threshold": 1.0,
+      "passed": true
+    },
+    {
+      "name": "records_dense_imp_connectivity",
+      "value": 3.3408625018310545,
+      "threshold": 0.0,
+      "passed": true
+    }
+  ],
+  "gate1_passed": false
+}
