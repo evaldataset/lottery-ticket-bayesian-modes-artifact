@@ -1,0 +1,47 @@
+{
+  "summary_json": "runs/digits_hmc_long_eps1e-2_r2_p0p3_summary.json",
+  "num_runs": 5,
+  "metrics": {
+    "posterior_jaccard_mean": 0.4135686917139725,
+    "random_jaccard_mean": 0.3254242932075096,
+    "chain_start_magnitude_to_imp_jaccard_mean": 0.873568024307993,
+    "posterior_to_chain_start_magnitude_jaccard_mean": 0.4094605148315071,
+    "dense_magnitude_to_imp_jaccard": 0.873568024307993,
+    "state_num_clusters": 3.0,
+    "function_num_clusters": 2.4,
+    "dense_imp_linear_barrier": null
+  },
+  "checks": [
+    {
+      "name": "posterior_beats_random",
+      "value": 0.08814439850646288,
+      "threshold": 0.02,
+      "passed": true
+    },
+    {
+      "name": "posterior_exceeds_chain_start",
+      "value": -0.4599993325940205,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "name": "posterior_moves_support_from_chain_start",
+      "value": 0.4094605148315071,
+      "threshold": 0.9,
+      "passed": true
+    },
+    {
+      "name": "dense_magnitude_does_not_dominate",
+      "value": 0.4599993325940205,
+      "threshold": 0.05,
+      "passed": false
+    },
+    {
+      "name": "records_function_and_state_clusters",
+      "value": 2.4,
+      "threshold": 1.0,
+      "passed": true
+    }
+  ],
+  "gate1_passed": false
+}

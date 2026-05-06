@@ -1,0 +1,83 @@
+\section*{NeurIPS Paper Checklist}
+
+\begin{enumerate}
+\item {\bf Claims}
+    \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: The abstract and Introduction state the support-equivalence claim, the negative conclusion, and the exact dense full-network CIFAR covariance limitation.
+
+\item {\bf Limitations}
+    \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: The Limitations and Next Experiments section lists the remaining posterior, permutation, learned-mask, process-causality, and reproducibility limitations.
+
+\item {\bf Theory assumptions and proofs}
+    \item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete proof?
+    \item[] Answer: \answerNA{}.
+    \item[] Justification: The paper is empirical and does not claim new theoretical results.
+
+\item {\bf Experimental result reproducibility}
+    \item[] Question: Does the paper fully disclose the information needed to reproduce the main experimental results?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: The main text and generated appendix summarize the settings, and the accompanying artifact package contains scripts, run summaries, environment locks, a Docker artifact verifier, and a release manifest.
+
+\item {\bf Open access to data and code}
+    \item[] Question: Does the paper provide open access to the data and code, with sufficient instructions to reproduce the main experimental results?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: The anonymized source repository is public at \url{https://github.com/evaldataset/lottery-ticket-bayesian-modes-artifact}, and the public release page hosts the artifact archive with SHA256 sidecar at \url{https://github.com/evaldataset/lottery-ticket-bayesian-modes-artifact/releases}. The local receipt registry records the exact archive URL, source commit, and passing public CI run; external GPU-container validation remains pending and is tracked separately as a release-readiness limitation.
+
+\item {\bf Experimental setting/details}
+    \item[] Question: Does the paper specify all training and test details necessary to understand the results?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: The Operational Test and Current Results sections describe datasets, model families, posterior approximations, seeds, controls, and comparison metrics; the appendix and artifact manifest give generated tables and commands.
+
+\item {\bf Experiment statistical significance}
+    \item[] Question: Does the paper report error bars or other suitable information about statistical significance?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: Main results are five-seed summaries with confidence intervals, paired win counts, grouped comparisons, and generated statistical tables.
+
+\item {\bf Experiments compute resources}
+    \item[] Question: For each experiment, does the paper provide sufficient information on compute resources needed to reproduce the experiments?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: The artifact package includes CPU and CUDA environment locks, container definitions, exact reproduction command lines, dense-covariance memory bounds, artifact storage estimates, and compute-resource accounting in \texttt{docs/compute\_resource\_accounting.md}. Historical metrics do not include profiler-grade wall-clock fields, and that limitation is documented there.
+
+\item {\bf Code of ethics}
+    \item[] Question: Does the research conform with the NeurIPS Code of Ethics?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: The work uses standard public benchmark datasets and synthetic/fake-data smoke tests, does not involve human subjects, and reports negative results and limitations transparently.
+
+\item {\bf Broader impacts}
+    \item[] Question: Does the paper discuss both potential positive and negative societal impacts of the work?
+    \item[] Answer: \answerNA{}.
+    \item[] Justification: This is foundational empirical analysis of pruning and posterior-support explanations, with no direct deployed system or new capability; the main impact is methodological transparency around negative results.
+
+\item {\bf Safeguards}
+    \item[] Question: Does the paper describe safeguards for responsible release of data or models that have a high risk for misuse?
+    \item[] Answer: \answerNA{}.
+    \item[] Justification: The work does not release high-risk models, scraped datasets, generative systems, or systems intended for deployment.
+
+\item {\bf Licenses for existing assets}
+    \item[] Question: Are existing assets properly credited and are license and terms of use explicitly mentioned and respected?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: Dataset, NeurIPS-style, and software dependency sources and license/terms notes are inventoried in \texttt{docs/asset\_license\_inventory.md}. Raw benchmark datasets are not redistributed in the local release manifest.
+
+\item {\bf New assets}
+    \item[] Question: Are new assets introduced in the paper well documented and provided alongside the assets?
+    \item[] Answer: \answerYes{}.
+    \item[] Justification: Project-created source, generated tables/figures, run summaries, saved mask artifacts, reproducibility docs, container definitions, and excluded local caches are documented in \texttt{docs/new\_asset\_inventory.md} and hash-inventoried by \texttt{docs/public\_release\_manifest.md}.
+
+\item {\bf Crowdsourcing and research with human subjects}
+    \item[] Question: For crowdsourcing experiments and research with human subjects, does the paper include the required details?
+    \item[] Answer: \answerNA{}.
+    \item[] Justification: The paper does not use crowdsourcing or human-subject experiments.
+
+\item {\bf Institutional review board approvals}
+    \item[] Question: Does the paper describe IRB approvals or equivalent review for research with human subjects?
+    \item[] Answer: \answerNA{}.
+    \item[] Justification: The paper does not involve human-subject research.
+
+\item {\bf Declaration of LLM usage}
+    \item[] Question: Does the paper describe LLM usage if it is an important, original, or non-standard component of the core methods?
+    \item[] Answer: \answerNA{}.
+    \item[] Justification: LLMs are not part of the scientific method, experiments, posterior approximations, pruning algorithms, or analysis pipeline studied in the paper.
+\end{enumerate}

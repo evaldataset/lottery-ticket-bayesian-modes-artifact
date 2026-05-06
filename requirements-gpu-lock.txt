@@ -1,0 +1,11 @@
+# Pinned CUDA training-container subset.
+#
+# This file intentionally excludes plotting-only packages from
+# `requirements-lock.txt`; the GPU image is for training/posterior commands and
+# is checked against `docs/environment_lock.json` by
+# `scripts/check_gpu_training_environment.py`.
+numpy==1.26.4
+scikit-learn==1.4.1.post1
+scipy==1.11.4
+torch==2.11.0
+torchvision==0.26.0
