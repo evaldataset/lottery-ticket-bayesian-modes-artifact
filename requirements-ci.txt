@@ -1,0 +1,2 @@
+# Minimal dependencies for generated-stat and artifact-verifier CI.
+numpy==1.26.4

@@ -1,0 +1,53 @@
+{
+  "summary_json": "runs/fashion_gate1_full_r8_p0p3_summary.json",
+  "num_runs": 5,
+  "metrics": {
+    "posterior_jaccard_mean": 0.1299626073112341,
+    "random_jaccard_mean": 0.02973301080707555,
+    "chain_start_magnitude_to_imp_jaccard_mean": 0.1300137072917596,
+    "posterior_to_chain_start_magnitude_jaccard_mean": 0.9407600352725165,
+    "dense_magnitude_to_imp_jaccard": 0.38133481265721564,
+    "state_num_clusters": 3.0,
+    "function_num_clusters": 3.0,
+    "dense_imp_linear_barrier": 0.054209511108398445
+  },
+  "checks": [
+    {
+      "name": "posterior_beats_random",
+      "value": 0.10022959650415855,
+      "threshold": 0.02,
+      "passed": true
+    },
+    {
+      "name": "posterior_exceeds_chain_start",
+      "value": -5.109998052549303e-05,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "name": "posterior_moves_support_from_chain_start",
+      "value": 0.9407600352725165,
+      "threshold": 0.9,
+      "passed": false
+    },
+    {
+      "name": "dense_magnitude_does_not_dominate",
+      "value": 0.25137220534598154,
+      "threshold": 0.05,
+      "passed": false
+    },
+    {
+      "name": "records_function_and_state_clusters",
+      "value": 3.0,
+      "threshold": 1.0,
+      "passed": true
+    },
+    {
+      "name": "records_dense_imp_connectivity",
+      "value": 0.054209511108398445,
+      "threshold": 0.0,
+      "passed": true
+    }
+  ],
+  "gate1_passed": false
+}
