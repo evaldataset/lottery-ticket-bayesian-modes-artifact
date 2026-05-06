@@ -1,0 +1,20 @@
+{
+  "manifest": "runs/public_release_manifest.json",
+  "manifest_root": ".",
+  "manifest_file_count": 1855,
+  "scanned_paths": 1859,
+  "scanned_text_files": 1847,
+  "skipped_binary_files": 12,
+  "extra_scan_paths": [
+    "docs/public_release_manifest.md",
+    "runs/public_release_manifest.json",
+    "docs/release_anonymization_audit.md",
+    "runs/release_anonymization_audit.json"
+  ],
+  "forbidden_manifest_paths": [],
+  "missing_paths": [],
+  "findings": [],
+  "finding_count": 0,
+  "risk_flags": [],
+  "release_anonymization_ready": true
+}

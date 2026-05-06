@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "purpose": "Human-maintained receipt registry for external submission-readiness evidence. Fill these fields after the anonymous archive and repository are uploaded and independently validated. Use docs/external_validation_receipt_template.md for the current archive SHA256 and source commit, or scripts/update_external_validation_receipts.py to validate and write externally observed values. Strict readiness rejects placeholder URLs and probes external URL reachability.",
+  "receipts": {
+    "public_release_upload": {
+      "status": "pending",
+      "url": "",
+      "artifact_sha256": "",
+      "notes": "Set status to observed after uploading dist/lottery_artifact_public_release_2026-05-06.tar.gz to an anonymous public artifact host. artifact_sha256 must match the local tarball SHA256."
+    },
+    "public_repository": {
+      "status": "pending",
+      "url": "",
+      "commit": "",
+      "clean_tree_evidence": "",
+      "notes": "Set status to observed after publishing the clean source-only anonymous repository snapshot, or an equivalent anonymous repository, and confirming it points to the separate release archive for large run artifacts. commit must match the current source snapshot commit reported by docs/external_validation_runbook.md."
+    },
+    "external_ci": {
+      "status": "pending",
+      "url": "",
+      "commit": "",
+      "passed": false,
+      "notes": "Set status to observed after a public CI run for the anonymous repository passes the configured check workflow. commit must match the current source snapshot commit reported by docs/external_validation_runbook.md."
+    },
+    "external_gpu_container": {
+      "status": "pending",
+      "url": "",
+      "commit": "",
+      "image_digest": "",
+      "passed": false,
+      "notes": "Set status to observed after an external CUDA host validates the GPU training container and records the log URL or artifact. commit must match the current source snapshot commit reported by docs/external_validation_runbook.md, and image_digest should be a sha256 image ID or digest."
+    }
+  }
+}

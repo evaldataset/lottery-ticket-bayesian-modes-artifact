@@ -1,0 +1,86 @@
+{
+  "paper_tex": "paper/main.tex",
+  "paper_pdf": "paper/main.pdf",
+  "reviewer_matrix": "runs/reviewer_objection_matrix.json",
+  "pdf_page_count": 17,
+  "total_tex_lines": 543,
+  "main_body_lines_before_appendix": 531,
+  "section_count": 7,
+  "sections": [
+    {
+      "title": "Introduction",
+      "start_line": 75,
+      "end_line": 120,
+      "lines": 46
+    },
+    {
+      "title": "Related Work",
+      "start_line": 121,
+      "end_line": 158,
+      "lines": 38
+    },
+    {
+      "title": "Operational Test",
+      "start_line": 159,
+      "end_line": 184,
+      "lines": 26
+    },
+    {
+      "title": "Current Results",
+      "start_line": 185,
+      "end_line": 444,
+      "lines": 260
+    },
+    {
+      "title": "Discussion",
+      "start_line": 445,
+      "end_line": 478,
+      "lines": 34
+    },
+    {
+      "title": "Limitations and Next Experiments",
+      "start_line": 479,
+      "end_line": 532,
+      "lines": 54
+    },
+    {
+      "title": "Generated Evidence Tables",
+      "start_line": 533,
+      "end_line": 543,
+      "lines": 11
+    }
+  ],
+  "table_count": 3,
+  "figure_count": 3,
+  "paragraph_count": 4,
+  "reviewer_objection_rows": 9,
+  "objection_checks": {
+    "random_control": true,
+    "sampler_movement": true,
+    "function_vs_mask": true,
+    "alignment_permutation": true,
+    "covariance_fidelity": true,
+    "linear_connectivity": true,
+    "learned_masks": true,
+    "process_mechanism": true
+  },
+  "missing_sections": [],
+  "risk_flags": [],
+  "submission_shape_ready": true,
+  "compiled_pdf_page_count_includes_appendix": true,
+  "compiled_pdf_page_count_over_12": true,
+  "recommended_page_budget": {
+    "main_text_pages": "8-10",
+    "appendix_pages": "unbounded supplemental",
+    "compiled_pdf_pages": "reported for visibility; may include appendix/generated tables",
+    "current_results_target_lines": 450,
+    "main_body_target_lines": 850
+  },
+  "recommended_cuts": [
+    "Move most residual-process variants to appendix tables and keep only the strongest tensor+score and learned-subspace rows in the main narrative.",
+    "Collapse posterior-family movement details into one main table plus one paragraph per objection class.",
+    "Move fake-CIFAR and tiny full-network code-path smokes to reproducibility or appendix text.",
+    "Keep the direct CIFAR mode/ticket row, channel-permutation audit, and covariance-feasibility limitation in the main paper.",
+    "Convert the reviewer objection matrix into the paper's main-result organization."
+  ]
+}
