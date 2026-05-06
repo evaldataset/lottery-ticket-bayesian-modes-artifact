@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "purpose": "Local CUDA Docker validation receipt for the GPU training image. This is not an independent external receipt.",
+  "image": {
+    "image": "lottery-training-gpu:2026-05-06",
+    "present": true,
+    "id": "sha256:10ced2818c6f295263ee7fc4a8d80bd8ea593a1bfb1de73d18527a9d86f09426",
+    "size_bytes": 13173406046,
+    "repo_tags": [
+      "lottery-training-gpu:2026-05-06"
+    ],
+    "repo_digests": []
+  },
+  "gpu_check": {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--device",
+      "/dev/nvidia-modeset",
+      "--device",
+      "/dev/nvidia-uvm",
+      "--device",
+      "/dev/nvidia-uvm-tools",
+      "--device",
+      "/dev/nvidia0",
+      "--device",
+      "/dev/nvidiactl",
+      "-v",
+      "/usr/lib/x86_64-linux-gnu/libcuda.so.580.126.09:/usr/lib/x86_64-linux-gnu/libcuda.so.1:ro",
+      "-v",
+      "/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.580.126.09:/usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1:ro",
+      "lottery-training-gpu:2026-05-06"
+    ],
+    "mode": "manual_driver_mount",
+    "fallback_used": true,
+    "fallback_reason": "nvidia_container_toolkit_runtime_unavailable",
+    "returncode": 0,
+    "stdout_json": {
+      "status": "ok",
+      "package_lock": "requirements-gpu-lock.txt",
+      "packages": {
+        "numpy": "1.26.4",
+        "scikit-learn": "1.4.1.post1",
+        "scipy": "1.11.4",
+        "torch": "2.11.0",
+        "torchvision": "0.26.0"
+      },
+      "skipped_environment_lock_packages": [
+        "matplotlib"
+      ],
+      "torch_cuda_version": "13.0",
+      "cuda_available": true,
+      "cuda_probe": {
+        "device_name": "NVIDIA GeForce RTX 5090",
+        "device_count": 1,
+        "matmul_sum": 4096.0
+      },
+      "nvidia_smi": null
+    },
+    "stderr_first_lines": []
+  },
+  "local_gpu_container_ready": true,
+  "risk_flags": []
+}

@@ -1,0 +1,53 @@
+{
+  "summary_json": "runs/fake_cifar10_sghmc_smoke_summary.json",
+  "num_runs": 1,
+  "metrics": {
+    "posterior_jaccard_mean": 0.5442923333687332,
+    "random_jaccard_mean": 0.5384625358859061,
+    "chain_start_magnitude_to_imp_jaccard_mean": 0.5444139026327042,
+    "posterior_to_chain_start_magnitude_jaccard_mean": 0.949873686315251,
+    "dense_magnitude_to_imp_jaccard": 0.9884651884630912,
+    "state_num_clusters": 1.0,
+    "function_num_clusters": 1.0,
+    "dense_imp_linear_barrier": 0.0
+  },
+  "checks": [
+    {
+      "name": "posterior_beats_random",
+      "value": 0.0058297974828270815,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "name": "posterior_exceeds_chain_start",
+      "value": -0.00012156926397099976,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "name": "posterior_moves_support_from_chain_start",
+      "value": 0.949873686315251,
+      "threshold": 0.9,
+      "passed": false
+    },
+    {
+      "name": "dense_magnitude_does_not_dominate",
+      "value": 0.444172855094358,
+      "threshold": 0.05,
+      "passed": false
+    },
+    {
+      "name": "records_function_and_state_clusters",
+      "value": 1.0,
+      "threshold": 1.0,
+      "passed": true
+    },
+    {
+      "name": "records_dense_imp_connectivity",
+      "value": 0.0,
+      "threshold": 0.0,
+      "passed": true
+    }
+  ],
+  "gate1_passed": false
+}
