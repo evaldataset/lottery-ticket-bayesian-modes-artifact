@@ -1,0 +1,53 @@
+{
+  "summary_json": "runs/mnist_gate1_full_r8_p0p3_summary.json",
+  "num_runs": 5,
+  "metrics": {
+    "posterior_jaccard_mean": 0.12754539518058902,
+    "random_jaccard_mean": 0.02977513063677033,
+    "chain_start_magnitude_to_imp_jaccard_mean": 0.12747068570620929,
+    "posterior_to_chain_start_magnitude_jaccard_mean": 0.9422677406210755,
+    "dense_magnitude_to_imp_jaccard": 0.4028401347277226,
+    "state_num_clusters": 3.0,
+    "function_num_clusters": 3.0,
+    "dense_imp_linear_barrier": 0.011517862091064455
+  },
+  "checks": [
+    {
+      "name": "posterior_beats_random",
+      "value": 0.0977702645438187,
+      "threshold": 0.02,
+      "passed": true
+    },
+    {
+      "name": "posterior_exceeds_chain_start",
+      "value": 7.470947437973607e-05,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "name": "posterior_moves_support_from_chain_start",
+      "value": 0.9422677406210755,
+      "threshold": 0.9,
+      "passed": false
+    },
+    {
+      "name": "dense_magnitude_does_not_dominate",
+      "value": 0.27529473954713357,
+      "threshold": 0.05,
+      "passed": false
+    },
+    {
+      "name": "records_function_and_state_clusters",
+      "value": 3.0,
+      "threshold": 1.0,
+      "passed": true
+    },
+    {
+      "name": "records_dense_imp_connectivity",
+      "value": 0.011517862091064455,
+      "threshold": 0.0,
+      "passed": true
+    }
+  ],
+  "gate1_passed": false
+}
